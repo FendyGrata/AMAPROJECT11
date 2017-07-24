@@ -269,8 +269,8 @@ public class FrmAdmin extends javax.swing.JFrame {
         jLabel34.setBackground(new java.awt.Color(255, 255, 255));
         jLabel34.setFont(new java.awt.Font("Orator Std", 0, 18)); // NOI18N
         jLabel34.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel34.setText("Chart No");
-        jPanel20.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 150, 20));
+        jLabel34.setText("Chart NUMBER");
+        jPanel20.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 140, 20));
 
         jLabel35.setFont(new java.awt.Font("Orator Std", 0, 18)); // NOI18N
         jLabel35.setForeground(new java.awt.Color(255, 255, 255));
@@ -785,7 +785,7 @@ public class FrmAdmin extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, 1318, Short.MAX_VALUE)
+            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, 1331, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1330,11 +1330,11 @@ public class FrmAdmin extends javax.swing.JFrame {
 
         jLabel30.setText("Total");
         jPanel15.add(jLabel30);
-        jLabel30.setBounds(698, 347, 29, 16);
+        jLabel30.setBounds(698, 347, 24, 14);
 
         jTextField18.setEditable(false);
         jPanel15.add(jTextField18);
-        jTextField18.setBounds(739, 370, 117, 22);
+        jTextField18.setBounds(739, 370, 117, 20);
 
         btnNewBuyProduct_INV.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/+ Icon.png"))); // NOI18N
         btnNewBuyProduct_INV.addActionListener(new java.awt.event.ActionListener() {
@@ -1461,10 +1461,10 @@ public class FrmAdmin extends javax.swing.JFrame {
             }
         });
         jPanel15.add(btnCopyAvg);
-        btnCopyAvg.setBounds(810, 250, 61, 30);
+        btnCopyAvg.setBounds(810, 250, 57, 30);
 
         jPanel3.setBackground(new java.awt.Color(32, 47, 78));
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Register Product", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 13), new java.awt.Color(255, 255, 255))); // NOI18N
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Register Product", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(255, 255, 255))); // NOI18N
 
         jLabel64.setFont(new java.awt.Font("Orator Std", 0, 27)); // NOI18N
         jLabel64.setForeground(new java.awt.Color(255, 255, 255));
