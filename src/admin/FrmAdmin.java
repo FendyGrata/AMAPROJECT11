@@ -269,7 +269,7 @@ public class FrmAdmin extends javax.swing.JFrame {
         jLabel34.setBackground(new java.awt.Color(255, 255, 255));
         jLabel34.setFont(new java.awt.Font("Orator Std", 0, 18)); // NOI18N
         jLabel34.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel34.setText("Chart Number");
+        jLabel34.setText("Chart No");
         jPanel20.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 150, 20));
 
         jLabel35.setFont(new java.awt.Font("Orator Std", 0, 18)); // NOI18N
@@ -1464,7 +1464,7 @@ public class FrmAdmin extends javax.swing.JFrame {
         btnCopyAvg.setBounds(810, 250, 61, 30);
 
         jPanel3.setBackground(new java.awt.Color(32, 47, 78));
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Register Product", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, null, new java.awt.Color(255, 255, 255)));
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Register Product", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 13), new java.awt.Color(255, 255, 255))); // NOI18N
 
         jLabel64.setFont(new java.awt.Font("Orator Std", 0, 27)); // NOI18N
         jLabel64.setForeground(new java.awt.Color(255, 255, 255));
