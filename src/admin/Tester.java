@@ -21,14 +21,14 @@ public class Tester extends javax.swing.JFrame {
     /**
      * Creates new form Tester
      */
-    
     private Connection conn;
+
     public Tester() {
         initComponents();
         databaseConnection();
         setLocationRelativeTo(null);
     }
-    
+
     private void databaseConnection() {
         try {
             Class.forName(DbConn.JDBC_CLASS);
@@ -83,9 +83,9 @@ public class Tester extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-     FrmAdmin admin = new FrmAdmin(conn);
-                    this.setVisible(false);
-                    admin.setVisible(true);
+        FrmAdmin admin = new FrmAdmin(conn);
+        this.setVisible(false);
+        admin.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
     /**
      * @param args the command line arguments

@@ -141,8 +141,8 @@ public class FrmAdmin extends javax.swing.JFrame {
         jButton21 = new javax.swing.JButton();
         jLabel46 = new javax.swing.JLabel();
         jScrollPane5 = new javax.swing.JScrollPane();
-        jTable3 = new javax.swing.JTable();
-        jComboBox3 = new javax.swing.JComboBox<>();
+        tblTB = new javax.swing.JTable();
+        cboPeriod_TB = new javax.swing.JComboBox<>();
         btnSearch_TB = new javax.swing.JButton();
         jPanel11 = new javax.swing.JPanel();
         jPanel14 = new javax.swing.JPanel();
@@ -215,8 +215,8 @@ public class FrmAdmin extends javax.swing.JFrame {
         jComboBox10 = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
         btnSearch_PL = new javax.swing.JButton();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         jPanel13 = new javax.swing.JPanel();
         jPanel17 = new javax.swing.JPanel();
         jPanel19 = new javax.swing.JPanel();
@@ -247,7 +247,8 @@ public class FrmAdmin extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("AMA | v.1");
         setBackground(new java.awt.Color(255, 255, 255));
-        setMinimumSize(new java.awt.Dimension(1500, 1200));
+        setMinimumSize(new java.awt.Dimension(1200, 800));
+        setSize(getPreferredSize());
         getContentPane().setLayout(null);
 
         tab.setBackground(new java.awt.Color(30, 48, 78));
@@ -571,7 +572,7 @@ public class FrmAdmin extends javax.swing.JFrame {
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel20, javax.swing.GroupLayout.DEFAULT_SIZE, 1294, Short.MAX_VALUE)
+                    .addComponent(jPanel20, javax.swing.GroupLayout.DEFAULT_SIZE, 1311, Short.MAX_VALUE)
                     .addComponent(jPanel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -580,7 +581,7 @@ public class FrmAdmin extends javax.swing.JFrame {
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
                 .addComponent(jPanel22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -704,7 +705,7 @@ public class FrmAdmin extends javax.swing.JFrame {
                                 .addComponent(cboChart_GL, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(cboPeriod_GL, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 88, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 106, Short.MAX_VALUE)
                                 .addComponent(btnSearch_GL, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel32))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -778,7 +779,7 @@ public class FrmAdmin extends javax.swing.JFrame {
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addGap(36, 36, 36)
                         .addComponent(btnSave_GL, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(38, Short.MAX_VALUE))))
+                        .addContainerGap(40, Short.MAX_VALUE))))
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -835,7 +836,7 @@ public class FrmAdmin extends javax.swing.JFrame {
         jLabel46.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel46.setText("Save");
 
-        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+        tblTB.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -844,7 +845,7 @@ public class FrmAdmin extends javax.swing.JFrame {
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.Double.class, java.lang.Double.class, java.lang.Double.class, java.lang.Double.class
             };
             boolean[] canEdit = new boolean [] {
                 false, false, false, false, false, false
@@ -858,19 +859,30 @@ public class FrmAdmin extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane5.setViewportView(jTable3);
-        if (jTable3.getColumnModel().getColumnCount() > 0) {
-            jTable3.getColumnModel().getColumn(1).setResizable(false);
-            jTable3.getColumnModel().getColumn(2).setResizable(false);
-            jTable3.getColumnModel().getColumn(3).setResizable(false);
-            jTable3.getColumnModel().getColumn(4).setResizable(false);
-            jTable3.getColumnModel().getColumn(5).setResizable(false);
+        jScrollPane5.setViewportView(tblTB);
+        if (tblTB.getColumnModel().getColumnCount() > 0) {
+            tblTB.getColumnModel().getColumn(0).setResizable(false);
+            tblTB.getColumnModel().getColumn(1).setResizable(false);
+            tblTB.getColumnModel().getColumn(2).setResizable(false);
+            tblTB.getColumnModel().getColumn(3).setResizable(false);
+            tblTB.getColumnModel().getColumn(4).setResizable(false);
+            tblTB.getColumnModel().getColumn(5).setResizable(false);
         }
 
-        jComboBox3.setFont(new java.awt.Font("Lucida Console", 0, 18)); // NOI18N
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" }));
+        cboPeriod_TB.setFont(new java.awt.Font("Lucida Console", 0, 18)); // NOI18N
+        cboPeriod_TB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" }));
+        cboPeriod_TB.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cboPeriod_TBMouseClicked(evt);
+            }
+        });
 
         btnSearch_TB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Search Engine.png"))); // NOI18N
+        btnSearch_TB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSearch_TBActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel23Layout = new javax.swing.GroupLayout(jPanel23);
         jPanel23.setLayout(jPanel23Layout);
@@ -880,7 +892,7 @@ public class FrmAdmin extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel23Layout.createSequentialGroup()
-                        .addGap(0, 76, Short.MAX_VALUE)
+                        .addGap(0, 96, Short.MAX_VALUE)
                         .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel23Layout.createSequentialGroup()
                                 .addComponent(jLabel41)
@@ -905,7 +917,7 @@ public class FrmAdmin extends javax.swing.JFrame {
                             .addGroup(jPanel23Layout.createSequentialGroup()
                                 .addComponent(jLabel44)
                                 .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(jComboBox3, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(cboPeriod_TB, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
                         .addComponent(btnSearch_TB, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane5))
@@ -916,14 +928,14 @@ public class FrmAdmin extends javax.swing.JFrame {
             .addGroup(jPanel23Layout.createSequentialGroup()
                 .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel23Layout.createSequentialGroup()
-                        .addContainerGap(28, Short.MAX_VALUE)
+                        .addContainerGap(29, Short.MAX_VALUE)
                         .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel45, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel23Layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
                                 .addComponent(jLabel44, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(cboPeriod_TB, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(10, 10, 10))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel23Layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -951,7 +963,7 @@ public class FrmAdmin extends javax.swing.JFrame {
                         .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel46, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton21, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(0, 59, Short.MAX_VALUE))
+                .addGap(0, 60, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
@@ -1152,7 +1164,7 @@ public class FrmAdmin extends javax.swing.JFrame {
                         .addComponent(jLabel54)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 250, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 268, Short.MAX_VALUE)
                         .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel14Layout.createSequentialGroup()
                         .addComponent(jLabel53)
@@ -1522,7 +1534,7 @@ public class FrmAdmin extends javax.swing.JFrame {
                         .addComponent(jLabel64, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(lblRefreshProduct_GL))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtPID_INV)
+                .addComponent(txtPID_INV, javax.swing.GroupLayout.DEFAULT_SIZE, 54, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel65, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1552,7 +1564,7 @@ public class FrmAdmin extends javax.swing.JFrame {
                 .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel15, javax.swing.GroupLayout.DEFAULT_SIZE, 326, Short.MAX_VALUE)
+                    .addComponent(jPanel15, javax.swing.GroupLayout.DEFAULT_SIZE, 329, Short.MAX_VALUE)
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -1575,29 +1587,49 @@ public class FrmAdmin extends javax.swing.JFrame {
 
         btnSearch_PL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Search Engine.png"))); // NOI18N
 
-        jTextArea2.setColumns(20);
-        jTextArea2.setRows(5);
-        jScrollPane4.setViewportView(jTextArea2);
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                true, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(jTable1);
+        if (jTable1.getColumnModel().getColumnCount() > 0) {
+            jTable1.getColumnModel().getColumn(0).setResizable(false);
+            jTable1.getColumnModel().getColumn(1).setResizable(false);
+        }
 
         javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
         jPanel16.setLayout(jPanel16Layout);
         jPanel16Layout.setHorizontalGroup(
             jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel16Layout.createSequentialGroup()
-                .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(jPanel16Layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel16Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane4))
+                        .addGap(10, 10, 10)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel16Layout.createSequentialGroup()
-                        .addGap(27, 27, 27)
                         .addComponent(jLabel60)
                         .addGap(52, 52, 52)
                         .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jComboBox10, 0, 229, Short.MAX_VALUE)
                             .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnSearch_PL, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 269, Short.MAX_VALUE)
+                        .addComponent(btnSearch_PL, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
         );
         jPanel16Layout.setVerticalGroup(
             jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1610,9 +1642,9 @@ public class FrmAdmin extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jComboBox10, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(btnSearch_PL, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 518, Short.MAX_VALUE)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(115, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
@@ -1669,7 +1701,7 @@ public class FrmAdmin extends javax.swing.JFrame {
                         .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jComboBox11, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, 229, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 250, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 269, Short.MAX_VALUE)
                         .addComponent(btnSearch_BS, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
@@ -1685,7 +1717,7 @@ public class FrmAdmin extends javax.swing.JFrame {
                         .addComponent(jComboBox11, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(btnSearch_BS, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane12, javax.swing.GroupLayout.DEFAULT_SIZE, 518, Short.MAX_VALUE)
+                .addComponent(jScrollPane12, javax.swing.GroupLayout.DEFAULT_SIZE, 526, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -1709,7 +1741,7 @@ public class FrmAdmin extends javax.swing.JFrame {
         jPanel13.setLayout(jPanel13Layout);
         jPanel13Layout.setHorizontalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1318, Short.MAX_VALUE)
+            .addGap(0, 1331, Short.MAX_VALUE)
             .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(jPanel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -1723,7 +1755,7 @@ public class FrmAdmin extends javax.swing.JFrame {
         tab.addTab("Balance Sheet", jPanel13);
 
         getContentPane().add(tab);
-        tab.setBounds(0, 290, 1420, 700);
+        tab.setBounds(-20, 0, 1420, 700);
 
         jLabel19.setFont(new java.awt.Font("Open Sans", 0, 24)); // NOI18N
         jLabel19.setText("KEY");
@@ -2036,6 +2068,7 @@ public class FrmAdmin extends javax.swing.JFrame {
         comboChart_GL();
         comboProduct_INV();
         comboSorterBuyProduct_INV();
+        comboPeriod_TB();
         tblINVSelectionListener();
 
 
@@ -2093,7 +2126,7 @@ public class FrmAdmin extends javax.swing.JFrame {
 
         } else {
             executeInsertBuyProduct();
-           executeRefreshBuyProduct();
+            executeRefreshBuyProduct();
             generateAvg();
         }
     }//GEN-LAST:event_btnNewBuyProduct_INVActionPerformed
@@ -2159,7 +2192,7 @@ public class FrmAdmin extends javax.swing.JFrame {
 
         } else {
             executeUpdateBuyProduct();
-         executeRefresh();
+            executeRefresh();
 
         }
     }//GEN-LAST:event_btnUpdateBuyProduct_INVActionPerformed
@@ -2215,14 +2248,25 @@ public class FrmAdmin extends javax.swing.JFrame {
     private void lblRefreshInventory_INVMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblRefreshInventory_INVMouseEntered
         // TODO add your handling code here:
     }//GEN-LAST:event_lblRefreshInventory_INVMouseEntered
-private Double avg_inv;
+    private Double avg_inv;
     private void btnCopyAvgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCopyAvgActionPerformed
-       avg_inv=Double.valueOf(txtAvg_INV.getText());
+        avg_inv = Double.valueOf(txtAvg_INV.getText());
     }//GEN-LAST:event_btnCopyAvgActionPerformed
 
     private void btnPaste_INVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPaste_INVActionPerformed
-       txtProductPrice_INV.setText(String.valueOf(avg_inv));
+        txtProductPrice_INV.setText(String.valueOf(avg_inv));
     }//GEN-LAST:event_btnPaste_INVActionPerformed
+
+    private void cboPeriod_TBMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cboPeriod_TBMouseClicked
+        comboPeriod_TB();
+    }//GEN-LAST:event_cboPeriod_TBMouseClicked
+
+    private void btnSearch_TBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearch_TBActionPerformed
+        removeTableData_TB();
+        loadTB_TB();
+//            generateTotalGL();
+//            checkUpdatesGL();
+    }//GEN-LAST:event_btnSearch_TBActionPerformed
 
     // METHODS
     private void setElements() {
@@ -2725,6 +2769,7 @@ private Double avg_inv;
     private javax.swing.JComboBox<String> cboChart_GL;
     private javax.swing.JComboBox<String> cboINVperiod_INV;
     private javax.swing.JComboBox<String> cboPeriod_GL;
+    private javax.swing.JComboBox<String> cboPeriod_TB;
     private javax.swing.JComboBox<String> cboProduct_INV;
     private javax.swing.JComboBox<String> cboSorterBuyProduct_INV;
     private com.toedter.calendar.JDateChooser dateChooser;
@@ -2733,7 +2778,6 @@ private Double avg_inv;
     private javax.swing.JButton jButton21;
     private javax.swing.JComboBox<String> jComboBox10;
     private javax.swing.JComboBox<String> jComboBox11;
-    private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -2815,16 +2859,15 @@ private Double avg_inv;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane12;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane9;
-    private javax.swing.JTable jTable3;
-    private javax.swing.JTextArea jTextArea2;
+    private javax.swing.JTable jTable1;
     private javax.swing.JTextArea jTextArea5;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField15;
@@ -2845,6 +2888,7 @@ private Double avg_inv;
     private javax.swing.JTable tblGL;
     private javax.swing.JTable tblInventory_INV;
     private javax.swing.JTable tblJournalMaker;
+    private javax.swing.JTable tblTB;
     private javax.swing.JTextField txtAvg_INV;
     private javax.swing.JTextField txtBalance_GL;
     public static javax.swing.JTextField txtChartName_Journal;
@@ -3088,8 +3132,8 @@ private Double avg_inv;
             pstatementsaveGL.setString(1, year_java_gl + "/" + month_sql_gl + "/" + chartname_gl);
             pstatementsaveGL.setString(2, chartname_gl);
             pstatementsaveGL.setString(3, month_java_gl + " " + year_java_gl);
-            pstatementsaveGL.setString(4, txtTDebit_GL.getText().trim());
-            pstatementsaveGL.setString(5, txtTCredit_GL.getText().trim());
+            pstatementsaveGL.setString(4, String.valueOf(tnowdebit_gl));
+            pstatementsaveGL.setString(5, String.valueOf(tnowcredit_gl));
             pstatementsaveGL.setString(6, String.valueOf(tprevbalance_gl));
             pstatementsaveGL.setString(7, txtBalance_GL.getText().trim());
             pstatementsaveGL.setString(8, chartname_gl);
@@ -3113,6 +3157,7 @@ private Double avg_inv;
         txtTDebit_GL.setText("");
         txtTCredit_GL.setText("");
         txtBalance_GL.setText("");
+        txtStatus_GL.setText("");
     }
     private int counterpid, pno;
     private String pid, pname;
@@ -3193,7 +3238,7 @@ private Double avg_inv;
             if (row_BuyProduct >= 0) {
                 txtTRID.setText(tblBuyProduct.getValueAt(row_BuyProduct, 0).toString());
                 dtcProductAdded_INV.setDate((Date) tblBuyProduct.getValueAt(row_BuyProduct, 1));
-                cboProduct_INV.setSelectedItem((String)selectedpname);
+                cboProduct_INV.setSelectedItem((String) selectedpname);
                 spiQty_INV.setValue((Object) tblBuyProduct.getValueAt(row_BuyProduct, 2));
                 txtPrice_INV.setText(tblBuyProduct.getValueAt(row_BuyProduct, 3).toString());
                 txtSubTotal_INV.setText(tblBuyProduct.getValueAt(row_BuyProduct, 4).toString());
@@ -3302,7 +3347,8 @@ private Double avg_inv;
             Logger.getLogger(FrmAdmin.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-private String selectedpname;
+    private String selectedpname;
+
     private void loadSpecificBuyProduct() {
         try {
             String sql = "select * from product_transaction where product_name=?;";
@@ -3311,8 +3357,8 @@ private String selectedpname;
             DefaultTableModel model = (DefaultTableModel) tblBuyProduct.getModel();
             ResultSet rs = pstatement.executeQuery();
             while (rs.next()) {
-                selectedpname=rs.getString("product_name");
-                
+                selectedpname = rs.getString("product_name");
+
                 Object data[] = {
                     rs.getString("tr_id"),
                     rs.getDate("tr_date"),
@@ -3505,7 +3551,98 @@ private String selectedpname;
     }
 
     private void getProductName() {
-       
+
+    }
+    private String period_TB;
+
+    private void comboPeriod_TB() {
+
+        try {
+            if (conn != null) {
+                String sql = "select distinct(period) from gl_master;";
+                PreparedStatement pstatement = conn.prepareStatement(sql);
+                DefaultComboBoxModel comboperiod_TB = new DefaultComboBoxModel();
+                ResultSet rs = pstatement.executeQuery();
+                while (rs.next()) {
+                    Object data[] = {
+                        period_TB = rs.getString("period"),};
+                    comboperiod_TB.addElement(period_TB);
+                }
+                cboPeriod_TB.setModel(comboperiod_TB);
+
+            }
+
+        } catch (SQLException ex) {
+            System.out.println("Error:\n" + ex.getLocalizedMessage());
+        }
+    }
+
+    private void removeTableData_TB() {
+        DefaultTableModel tableModel = (DefaultTableModel) tblTB.getModel();
+        tableModel.setRowCount(0);
+    }
+
+    private Double open_TB, debit_TB, credit_TB, prevbalance_TB, prevdebit_TB, prevcredit_TB;
+
+    private void loadTB_TB() {
+        try {
+
+            setPrevBalance_TB();
+
+            String sql = "select cl.chart_no, gl.chart_name, gl.prev_balance, gl.debit, gl.credit from gl_master gl inner join chartlist cl on gl.chart_name = cl.chart_name where gl.period=?;";
+            PreparedStatement pstatement = conn.prepareStatement(sql);
+            DefaultTableModel model2 = (DefaultTableModel) tblTB.getModel();
+            pstatement.setString(1, cboPeriod_TB.getSelectedItem().toString());
+            ResultSet rs = pstatement.executeQuery();
+            while (rs.next()) {
+
+                open_TB = rs.getDouble("gl.prev_balance");
+                debit_TB = rs.getDouble("gl.debit");
+                credit_TB = rs.getDouble("gl.credit");
+                Object data[] = {
+                    rs.getString("cl.chart_no"),
+                    rs.getString("gl.chart_name"),
+                    open_TB,
+                    debit_TB ,
+                    credit_TB,
+                    open_TB + debit_TB - credit_TB
+                };
+                model2.addRow(data);
+
+            };
+        } catch (SQLException ex) {
+            Logger.getLogger(FrmAdmin.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
+
+    private void setPrevBalance_TB() {
+        try {
+
+            String sql = "select prev_balance, debit, credit from gl_master where period=?;";
+            PreparedStatement pstatement = conn.prepareStatement(sql);
+            DefaultTableModel model2 = (DefaultTableModel) tblTB.getModel();
+            pstatement.setString(1, cboPeriod_TB.getSelectedItem().toString());
+            ResultSet rs = pstatement.executeQuery();
+            while (rs.next()) {
+
+                Object data[] = {
+                    prevbalance_TB = rs.getDouble("prev_balance"),
+                    prevdebit_TB = rs.getDouble("debit"),
+                    prevcredit_TB = rs.getDouble("credit"),};
+
+                if (prevbalance_TB < 0) {
+                    prevdebit_TB = 0.0;
+                    prevcredit_TB = prevbalance_TB;
+                } else if (prevbalance_TB > 0) {
+                    prevcredit_TB = 0.0;
+                    prevdebit_TB = prevbalance_TB;
+                }
+
+            };
+        } catch (SQLException ex) {
+            Logger.getLogger(FrmAdmin.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
 }

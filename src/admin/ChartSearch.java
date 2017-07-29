@@ -14,6 +14,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.ListSelectionModel;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
@@ -41,6 +42,7 @@ public final class ChartSearch extends javax.swing.JDialog {
         this.Direction = Direction;
         initComponents();
         loadDatabase();
+        comboChartType();
         tableSelectionListener();
         setLocationRelativeTo(null);
 
@@ -53,6 +55,7 @@ public final class ChartSearch extends javax.swing.JDialog {
                 txtChartNo.setText(tblChart.getValueAt(row, 0).toString());
                 txtChartNo.setEditable(false);
                 txtChartName.setText(tblChart.getValueAt(row, 1).toString());
+                cboType.setSelectedItem(tblChart.getValueAt(row, 2).toString());
             }
         };
         tblChart.getSelectionModel().setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
@@ -70,22 +73,19 @@ public final class ChartSearch extends javax.swing.JDialog {
 
         try {
 
-            String sql = "SELECT * FROM akuntansi.chartlist order by chart_no;";
+            String sql = "SELECT chart_no,chart_name,chart_type FROM akuntansi.chartlist order by chart_no;";
             PreparedStatement pstatement = conn.prepareStatement(sql);
 
             ResultSet rs = pstatement.executeQuery();
             if (rs.isBeforeFirst()) { // check is resultset not empty
-                DefaultTableModel tableModel = (DefaultTableModel) tblChart.getModel();
+                DefaultTableModel model = (DefaultTableModel) tblChart.getModel();
                 while (rs.next()) {
-                    int chart_no = rs.getInt("chart_no");
-                    String chart_name = rs.getString("chart_name");
-
-                    Object data[][] = {
-                        {chart_no, chart_name}
+                    Object data[] = {
+                    rs.getString("chart_no"),
+                    rs.getString("chart_name"),
+                    rs.getString("chart_type"),
                     };
-                    for (Object o[] : data) {
-                        tableModel.addRow(o);
-                    }
+                model.addRow(data);
                 }
             } else {
 
@@ -125,6 +125,8 @@ public final class ChartSearch extends javax.swing.JDialog {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        cboType = new javax.swing.JComboBox<>();
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
@@ -150,14 +152,14 @@ public final class ChartSearch extends javax.swing.JDialog {
 
             },
             new String [] {
-                "Chart No", "Chart Name"
+                "Chart No", "Chart Name", "Chart Type"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false
+                false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -230,7 +232,7 @@ public final class ChartSearch extends javax.swing.JDialog {
                                 .addComponent(txtSearch)
                                 .addGap(4, 4, 4))))
                     .addComponent(btnSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(29, 29, 29)
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -278,7 +280,7 @@ public final class ChartSearch extends javax.swing.JDialog {
 
         jLabel7.setFont(new java.awt.Font("Orator Std", 0, 24)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("CHART NAME");
+        jLabel7.setText("TYPE");
 
         jLabel8.setFont(new java.awt.Font("Orator Std", 0, 24)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
@@ -289,6 +291,12 @@ public final class ChartSearch extends javax.swing.JDialog {
             }
         });
 
+        jLabel9.setFont(new java.awt.Font("Orator Std", 0, 24)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setText("CHART NAME");
+
+        cboType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Type.." }));
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -297,28 +305,25 @@ public final class ChartSearch extends javax.swing.JDialog {
                 .addGap(21, 21, 21)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel7)
+                    .addComponent(jLabel8)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(cboType, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                                .addGap(15, 15, 15)
                                 .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(27, 27, 27)
-                                .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(67, 67, 67)
                                 .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(txtChartName, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtChartNo, javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
                                 .addGap(6, 6, 6)
-                                .addComponent(jLabel6)))
+                                .addComponent(jLabel6))
+                            .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtChartName, javax.swing.GroupLayout.Alignment.LEADING))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lblRefresh)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel2Layout.createSequentialGroup()
-                    .addGap(31, 31, 31)
-                    .addComponent(jLabel8)
-                    .addContainerGap(265, Short.MAX_VALUE)))
+                .addContainerGap(13, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -327,27 +332,25 @@ public final class ChartSearch extends javax.swing.JDialog {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblRefresh))
-                .addGap(72, 72, 72)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtChartNo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(8, 8, 8)
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtChartName, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(cboType, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(54, 54, 54)
-                        .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(54, 54, 54)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(btnDelete, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnUpdate, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel2Layout.createSequentialGroup()
-                    .addGap(88, 88, 88)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(234, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -545,11 +548,13 @@ public final class ChartSearch extends javax.swing.JDialog {
     private javax.swing.JButton btnOk;
     private javax.swing.JButton btnSearch;
     private javax.swing.JButton btnUpdate;
+    private javax.swing.JComboBox<String> cboType;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane2;
@@ -563,11 +568,12 @@ public final class ChartSearch extends javax.swing.JDialog {
     private void executeAdd() throws SQLException {
         DefaultTableModel tableModel = (DefaultTableModel) tblChart.getModel();
 
-        String insertSql = "insert into akuntansi.chartlist values (?,?,?)";
+        String insertSql = "insert into akuntansi.chartlist values (?,?,?,?)";
         PreparedStatement pstatement = conn.prepareStatement(insertSql);
         pstatement.setInt(1, Integer.valueOf(txtChartNo.getText()));
         pstatement.setString(2, txtChartName.getText());
-        pstatement.setBoolean(3, true);
+        pstatement.setString(3, cboType.getSelectedItem().toString());
+        pstatement.setBoolean(4, true);
         pstatement.executeUpdate();
 
         tableModel.setRowCount(0);
@@ -578,11 +584,12 @@ public final class ChartSearch extends javax.swing.JDialog {
     private void executeUpdate() throws SQLException {
 
         String editSql = "update akuntansi.chartlist set "
-                + "chart_name=?"
+                + "chart_name=?, chart_type=?"
                 + "where chart_no=?";
         PreparedStatement pstatement2 = conn.prepareStatement(editSql);
         pstatement2.setString(1, txtChartName.getText().trim());
-        pstatement2.setInt(2, Integer.valueOf(txtChartNo.getText()));
+        pstatement2.setString(2, cboType.getSelectedItem().toString());
+        pstatement2.setInt(3, Integer.valueOf(txtChartNo.getText()));
         pstatement2.executeUpdate();
         pstatement2.close();
         Sutil.msg(this, "Chart has been updated.");
@@ -606,7 +613,7 @@ public final class ChartSearch extends javax.swing.JDialog {
 
         try {
             removeTableData();
-            String sql = "SELECT * FROM akuntansi.chart WHERE chart_name LIKE ?";
+            String sql = "SELECT * FROM akuntansi.chartlist WHERE chart_name LIKE ?";
 
             PreparedStatement pstatement = conn.prepareStatement(sql);
             pstatement.setString(1, "%" + txtSearch.getText().trim() + "%");
@@ -617,7 +624,9 @@ public final class ChartSearch extends javax.swing.JDialog {
                 while (rs.next()) {
                     Object data[] = {
                         rs.getInt("chart_no"),
-                        rs.getString("chart_name")
+                        rs.getString("chart_name"),
+                        rs.getString("chart_type")
+                            
                     };
                     tableModel.addRow(data);
                 }
@@ -627,6 +636,34 @@ public final class ChartSearch extends javax.swing.JDialog {
             pstatement.close();
         } catch (SQLException ex) {
             System.out.println("Error:\n" + ex.getLocalizedMessage());
+        }
+
+    }
+
+    private void comboChartType() {
+       try {
+
+            String sql = "SELECT distinct chart_type FROM akuntansi.chartlist;";
+            PreparedStatement pstatement = conn.prepareStatement(sql);
+
+            ResultSet rs = pstatement.executeQuery();
+            if (rs.isBeforeFirst()) { // check is resultset not empty
+                DefaultComboBoxModel combotype = new DefaultComboBoxModel();
+                while (rs.next()) {
+                    String chart_type = rs.getString("chart_type");
+                    combotype.addElement(chart_type);
+                }
+                
+                 
+              
+                cboType.setModel(combotype);
+            } else {
+
+            }
+            rs.close();
+            pstatement.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(FrmAdmin.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }

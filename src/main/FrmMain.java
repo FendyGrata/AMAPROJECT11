@@ -29,15 +29,15 @@ public class FrmMain extends javax.swing.JFrame {
     private Connection conn;
 
     public FrmMain() {
-        initComponents();
-        databaseConnection();
         try {
+            initComponents();
+            databaseConnection();
             autoLogin();
+            setLocationRelativeTo(null);
+            txtID.requestFocusInWindow();
         } catch (SQLException ex) {
             Logger.getLogger(FrmMain.class.getName()).log(Level.SEVERE, null, ex);
         }
-        setLocationRelativeTo(null);
-        txtID.requestFocusInWindow();
     }
 
     private void databaseConnection() {
