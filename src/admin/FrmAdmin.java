@@ -156,7 +156,6 @@ public class FrmAdmin extends javax.swing.JFrame {
         jLabel56 = new javax.swing.JLabel();
         txtID_INV = new javax.swing.JTextField();
         jLabel68 = new javax.swing.JLabel();
-        txtName_INV = new javax.swing.JTextField();
         jLabel69 = new javax.swing.JLabel();
         txtProductPrice_INV = new javax.swing.JTextField();
         txtOpening_INV = new javax.swing.JTextField();
@@ -174,11 +173,11 @@ public class FrmAdmin extends javax.swing.JFrame {
         btnDelete_INV = new javax.swing.JButton();
         cboINVperiod_INV = new javax.swing.JComboBox<>();
         btnPaste_INV = new javax.swing.JButton();
+        cboProductName_INV = new javax.swing.JComboBox<>();
         jPanel15 = new javax.swing.JPanel();
         jScrollPane7 = new javax.swing.JScrollPane();
         tblBuyProduct = new javax.swing.JTable();
         cboSorterBuyProduct_INV = new javax.swing.JComboBox<>();
-        cboProduct_INV = new javax.swing.JComboBox<>();
         txtPrice_INV = new javax.swing.JTextField();
         jLabel30 = new javax.swing.JLabel();
         jTextField18 = new javax.swing.JTextField();
@@ -202,6 +201,7 @@ public class FrmAdmin extends javax.swing.JFrame {
         txtTRID = new javax.swing.JTextField();
         jLabel75 = new javax.swing.JLabel();
         btnCopyAvg = new javax.swing.JButton();
+        cboProduct_INV = new javax.swing.JComboBox<>();
         jPanel3 = new javax.swing.JPanel();
         jLabel64 = new javax.swing.JLabel();
         txtPID_INV = new javax.swing.JTextField();
@@ -785,7 +785,7 @@ public class FrmAdmin extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, 1331, Short.MAX_VALUE)
+            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, 1318, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1042,12 +1042,6 @@ public class FrmAdmin extends javax.swing.JFrame {
         jLabel68.setForeground(new java.awt.Color(255, 255, 255));
         jLabel68.setText("NAME");
 
-        txtName_INV.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtName_INVActionPerformed(evt);
-            }
-        });
-
         jLabel69.setFont(new java.awt.Font("Orator Std", 0, 18)); // NOI18N
         jLabel69.setForeground(new java.awt.Color(255, 255, 255));
         jLabel69.setText("PRICE");
@@ -1141,6 +1135,13 @@ public class FrmAdmin extends javax.swing.JFrame {
             }
         });
 
+        cboProductName_INV.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Product Name" }));
+        cboProductName_INV.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cboProductName_INVMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
         jPanel14.setLayout(jPanel14Layout);
         jPanel14Layout.setHorizontalGroup(
@@ -1171,20 +1172,20 @@ public class FrmAdmin extends javax.swing.JFrame {
                                 .addGap(54, 54, 54))
                             .addGroup(jPanel14Layout.createSequentialGroup()
                                 .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel14Layout.createSequentialGroup()
+                                        .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel56, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabel68, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(cboProductName_INV, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(txtID_INV)))
                                     .addGroup(jPanel14Layout.createSequentialGroup()
                                         .addComponent(jLabel69, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(txtProductPrice_INV, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(btnPaste_INV, javax.swing.GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE))
-                                    .addGroup(jPanel14Layout.createSequentialGroup()
-                                        .addComponent(jLabel56, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(txtID_INV))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel14Layout.createSequentialGroup()
-                                        .addComponent(jLabel68, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(txtName_INV))
                                     .addGroup(jPanel14Layout.createSequentialGroup()
                                         .addGap(0, 0, Short.MAX_VALUE)
                                         .addComponent(jLabel70, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1236,8 +1237,8 @@ public class FrmAdmin extends javax.swing.JFrame {
                             .addGroup(jPanel14Layout.createSequentialGroup()
                                 .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel71, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtName_INV, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel68, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jLabel68, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cboProductName_INV, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel72, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1316,27 +1317,19 @@ public class FrmAdmin extends javax.swing.JFrame {
         });
         jPanel15.add(cboSorterBuyProduct_INV);
         cboSorterBuyProduct_INV.setBounds(460, 30, 180, 30);
-
-        cboProduct_INV.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Product Name" }));
-        cboProduct_INV.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                cboProduct_INVMouseClicked(evt);
-            }
-        });
-        jPanel15.add(cboProduct_INV);
-        cboProduct_INV.setBounds(220, 70, 220, 30);
         jPanel15.add(txtPrice_INV);
         txtPrice_INV.setBounds(220, 150, 220, 30);
 
         jLabel30.setText("Total");
         jPanel15.add(jLabel30);
-        jLabel30.setBounds(698, 347, 24, 14);
+        jLabel30.setBounds(698, 347, 29, 16);
 
         jTextField18.setEditable(false);
         jPanel15.add(jTextField18);
-        jTextField18.setBounds(739, 370, 117, 20);
+        jTextField18.setBounds(739, 370, 117, 22);
 
         btnNewBuyProduct_INV.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/+ Icon.png"))); // NOI18N
+        btnNewBuyProduct_INV.setEnabled(false);
         btnNewBuyProduct_INV.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNewBuyProduct_INVActionPerformed(evt);
@@ -1352,6 +1345,7 @@ public class FrmAdmin extends javax.swing.JFrame {
         jLabel58.setBounds(10, 30, 80, 37);
 
         btnUpdateBuyProduct_INV.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/UPDATE ICON.png"))); // NOI18N
+        btnUpdateBuyProduct_INV.setEnabled(false);
         btnUpdateBuyProduct_INV.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnUpdateBuyProduct_INVActionPerformed(evt);
@@ -1461,10 +1455,24 @@ public class FrmAdmin extends javax.swing.JFrame {
             }
         });
         jPanel15.add(btnCopyAvg);
-        btnCopyAvg.setBounds(810, 250, 57, 30);
+        btnCopyAvg.setBounds(810, 250, 61, 30);
+
+        cboProduct_INV.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Product Name" }));
+        cboProduct_INV.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cboProduct_INVMouseClicked(evt);
+            }
+        });
+        cboProduct_INV.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cboProduct_INVActionPerformed(evt);
+            }
+        });
+        jPanel15.add(cboProduct_INV);
+        cboProduct_INV.setBounds(220, 70, 220, 30);
 
         jPanel3.setBackground(new java.awt.Color(32, 47, 78));
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Register Product", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(255, 255, 255))); // NOI18N
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Register Product", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 13), new java.awt.Color(255, 255, 255))); // NOI18N
 
         jLabel64.setFont(new java.awt.Font("Orator Std", 0, 27)); // NOI18N
         jLabel64.setForeground(new java.awt.Color(255, 255, 255));
@@ -2093,18 +2101,16 @@ public class FrmAdmin extends javax.swing.JFrame {
 
         } else {
             executeInsertBuyProduct();
-           executeRefreshBuyProduct();
+            executeRefreshBuyProduct();
             generateAvg();
+            btnAddProduct_INV.setEnabled(false);
+            btnUpdateBuyProduct_INV.setEnabled(false);
         }
     }//GEN-LAST:event_btnNewBuyProduct_INVActionPerformed
 
     private void txtID_INVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtID_INVActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtID_INVActionPerformed
-
-    private void txtName_INVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtName_INVActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtName_INVActionPerformed
 
     private void txtProductPrice_INVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtProductPrice_INVActionPerformed
         // TODO add your handling code here:
@@ -2148,6 +2154,8 @@ public class FrmAdmin extends javax.swing.JFrame {
             qty = (Integer) spiQty_INV.getValue();
             total = price * qty;
             txtSubTotal_INV.setText(String.valueOf(total));
+            btnNewBuyProduct_INV.setEnabled(true);
+            btnUpdateBuyProduct_INV.setEnabled(true);
         } else {
             Sutil.msg(this, "Some field is still empty.");
         }
@@ -2159,7 +2167,9 @@ public class FrmAdmin extends javax.swing.JFrame {
 
         } else {
             executeUpdateBuyProduct();
-         executeRefresh();
+            executeRefresh();
+            btnUpdateBuyProduct_INV.setEnabled(false);
+            btnAddProduct_INV.setEnabled(false);
 
         }
     }//GEN-LAST:event_btnUpdateBuyProduct_INVActionPerformed
@@ -2170,6 +2180,7 @@ public class FrmAdmin extends javax.swing.JFrame {
                 executeDeleteBuyProduct();
                 removeTableData_BuyProduct();
                 loadAllBuyProduct();
+                executeRefreshBuyProduct();
             } else {
                 Sutil.msg(this, "No data selected.");
             }
@@ -2188,7 +2199,7 @@ public class FrmAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSearchBuyProduct_INVActionPerformed
 
     private void btnAdd_INVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdd_INVActionPerformed
-        if (txtName_INV.getText().trim().isEmpty() || txtProductPrice_INV.getText().trim().isEmpty() || txtOpening_INV.getText().trim().isEmpty() || txtIn_INV.getText().trim().isEmpty() || txtOut_INV.getText().trim().isEmpty() || txtEnd_INV.getText().trim().isEmpty() || txtValue_INV.getText().trim().isEmpty()) {
+        if ( txtProductPrice_INV.getText().trim().isEmpty() || txtOpening_INV.getText().trim().isEmpty() || txtIn_INV.getText().trim().isEmpty() || txtOut_INV.getText().trim().isEmpty() || txtEnd_INV.getText().trim().isEmpty() || txtValue_INV.getText().trim().isEmpty()) {
             Sutil.msg(this, "Some field is still empty.");
 
         } else {
@@ -2203,7 +2214,7 @@ public class FrmAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_cboINVperiod_INVMouseClicked
 
     private void btnUpdate_INVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdate_INVActionPerformed
-        if (txtID_INV.getText().trim().isEmpty() || txtName_INV.getText().trim().isEmpty() || txtProductPrice_INV.getText().trim().isEmpty() || txtOpening_INV.getText().trim().isEmpty() || txtIn_INV.getText().trim().isEmpty() || txtOut_INV.getText().trim().isEmpty() || txtEnd_INV.getText().trim().isEmpty() || txtValue_INV.getText().trim().isEmpty()) {
+        if (txtID_INV.getText().trim().isEmpty() || txtProductPrice_INV.getText().trim().isEmpty() || txtOpening_INV.getText().trim().isEmpty() || txtIn_INV.getText().trim().isEmpty() || txtOut_INV.getText().trim().isEmpty() || txtEnd_INV.getText().trim().isEmpty() || txtValue_INV.getText().trim().isEmpty()) {
             Sutil.msg(this, "Some field is still empty.");
 
         } else {
@@ -2223,6 +2234,14 @@ private Double avg_inv;
     private void btnPaste_INVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPaste_INVActionPerformed
        txtProductPrice_INV.setText(String.valueOf(avg_inv));
     }//GEN-LAST:event_btnPaste_INVActionPerformed
+
+    private void cboProductName_INVMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cboProductName_INVMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cboProductName_INVMouseClicked
+
+    private void cboProduct_INVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboProduct_INVActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cboProduct_INVActionPerformed
 
     // METHODS
     private void setElements() {
@@ -2666,6 +2685,7 @@ private Double avg_inv;
 
                 }
                 cboProduct_INV.setModel(comboproduct);
+                cboProductName_INV.setModel(comboproduct);
 
             }
 
@@ -2673,6 +2693,7 @@ private Double avg_inv;
             System.out.println("Error:\n" + ex.getLocalizedMessage());
         }
     }
+    
 
     private void comboSorterBuyProduct_INV() {
 
@@ -2725,6 +2746,7 @@ private Double avg_inv;
     private javax.swing.JComboBox<String> cboChart_GL;
     private javax.swing.JComboBox<String> cboINVperiod_INV;
     private javax.swing.JComboBox<String> cboPeriod_GL;
+    private javax.swing.JComboBox<String> cboProductName_INV;
     private javax.swing.JComboBox<String> cboProduct_INV;
     private javax.swing.JComboBox<String> cboSorterBuyProduct_INV;
     private com.toedter.calendar.JDateChooser dateChooser;
@@ -2856,7 +2878,6 @@ private Double avg_inv;
     private javax.swing.JTextField txtID_INV;
     private javax.swing.JTextField txtIn_INV;
     private javax.swing.JTextField txtJID_Journal;
-    private javax.swing.JTextField txtName_INV;
     private javax.swing.JTextField txtOpening_INV;
     private javax.swing.JTextField txtOut_INV;
     private javax.swing.JTextField txtPID_INV;
@@ -3212,7 +3233,7 @@ private Double avg_inv;
             int row_INV = tblInventory_INV.getSelectedRow();
             if (row_INV >= 0) {
                 txtID_INV.setText(tblInventory_INV.getValueAt(row_INV, 0).toString());
-                txtName_INV.setText(tblInventory_INV.getValueAt(row_INV, 1).toString());
+                cboProductName_INV.setSelectedItem(tblInventory_INV.getValueAt(row_INV, 1).toString());
                 txtProductPrice_INV.setText(tblInventory_INV.getValueAt(row_INV, 2).toString());
                 txtOpening_INV.setText(tblInventory_INV.getValueAt(row_INV, 3).toString());
                 txtIn_INV.setText(tblInventory_INV.getValueAt(row_INV, 4).toString());
@@ -3363,7 +3384,7 @@ private String selectedpname;
             String insertBuySql = "insert into inventory(period,product_name,price,opening,in_inv,value_in,out_inv,value_out,ending,value_end) values (?,?,?,?,?,?,?,?,?,?)";
             PreparedStatement pstatement_addINV = conn.prepareStatement(insertBuySql);
             pstatement_addINV.setString(1, String.valueOf(cboINVperiod_INV.getSelectedItem().toString()));
-            pstatement_addINV.setString(2, String.valueOf(txtName_INV.getText()));
+            pstatement_addINV.setString(2, String.valueOf(cboProductName_INV.getSelectedItem()));
             pstatement_addINV.setDouble(3, price);
             pstatement_addINV.setInt(4, open);
             pstatement_addINV.setInt(5, in);
@@ -3500,7 +3521,7 @@ private String selectedpname;
 
     private void refreshFormINV() {
         txtID_INV.setText("");
-        txtName_INV.setText("");
+        cboProductName_INV.setSelectedIndex(1);
         txtProductPrice_INV.setText("");
     }
 
