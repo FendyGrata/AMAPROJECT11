@@ -490,6 +490,8 @@ public final class ChartSearch extends javax.swing.JDialog {
         } catch (SQLException ex) {
             Logger.getLogger(ChartSearch.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
+          Sutil.msg(this, "Chart deleted.");
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     private void btnOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOkActionPerformed
