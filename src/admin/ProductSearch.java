@@ -319,6 +319,8 @@ public final class ProductSearch extends javax.swing.JDialog {
             } else {
                 executeAddProduct();
                 refreshForm();
+                removeTableDataProducts();
+                loadProducts();
             }
         } else {
             Sutil.msg(this, "Some field is still empty.");
@@ -471,9 +473,6 @@ public final class ProductSearch extends javax.swing.JDialog {
 
             executeSaveProduct();
 
-            btnAdd.setEnabled(false);
-            removeTableDataProducts();
-            loadProducts();
         } catch (SQLException ex) {
             Logger.getLogger(FrmAdmin.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -498,6 +497,7 @@ public final class ProductSearch extends javax.swing.JDialog {
 
     private void loadProducts() {
         try {
+            removeTableDataProducts();
             if (conn != null) {
                 String sql = "select  pid, product_name from productlist order by pno;";
                 PreparedStatement pstatement = conn.prepareStatement(sql);
