@@ -20,9 +20,11 @@ public class FrmAbout extends javax.swing.JFrame {
      * Creates new form About
      */
     private Connection conn;
+    private String source;
 
-    public FrmAbout(Connection conn) {
+    public FrmAbout(Connection conn, String source) {
         this.conn = conn;
+        this.source = source;
         initComponents();
         setLocationRelativeTo(null);
     }
@@ -135,10 +137,13 @@ public class FrmAbout extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void lblBackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblBackMouseClicked
-        this.setVisible(false);
-        FrmMain fm = new FrmMain();
-        fm.setVisible(true);
-        fm.txtID.requestFocusInWindow();
+        if (source.equals("Admin")) {
+            this.setVisible(false);
+        } else if (source.equals("Main")) {
+            this.setVisible(false);
+            FrmMain fm = new FrmMain();
+            fm.setVisible(true);
+        }
     }//GEN-LAST:event_lblBackMouseClicked
 
 

@@ -2344,7 +2344,7 @@ public class FrmAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_menuRefreshActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-      FrmAbout ab = new FrmAbout(conn);
+      FrmAbout ab = new FrmAbout(conn, "Admin");
       ab.setVisible(true);
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 

@@ -200,7 +200,7 @@ public class FrmMain extends javax.swing.JFrame {
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
         this.setVisible(false);
-        FrmAbout about = new FrmAbout(conn);
+        FrmAbout about = new FrmAbout(conn,"Main");
         about.setVisible(true);
 
     }//GEN-LAST:event_jLabel3MouseClicked
