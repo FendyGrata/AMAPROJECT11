@@ -38,6 +38,7 @@ public final class ProductSearch extends javax.swing.JDialog {
         super(parent, modal);
         this.conn = conn;
         initComponents();
+        txtSearch.requestFocusInWindow();
         loadProducts();
         tableSelectionListener();
         setLocationRelativeTo(null);
