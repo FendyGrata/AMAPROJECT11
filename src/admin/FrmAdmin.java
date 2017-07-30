@@ -231,7 +231,6 @@ public class FrmAdmin extends javax.swing.JFrame {
         jLabel22 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -1784,10 +1783,6 @@ public class FrmAdmin extends javax.swing.JFrame {
         getContentPane().add(jLabel33);
         jLabel33.setBounds(1060, 0, 420, 60);
 
-        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/AMA - Key Success.gif"))); // NOI18N
-        getContentPane().add(jLabel14);
-        jLabel14.setBounds(0, 0, 650, 290);
-
         jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/33.png"))); // NOI18N
         getContentPane().add(jLabel17);
         jLabel17.setBounds(1060, 60, 420, 740);
@@ -2833,7 +2828,6 @@ public class FrmAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
