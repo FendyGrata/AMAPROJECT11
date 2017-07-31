@@ -99,7 +99,6 @@ public class FrmAdmin extends javax.swing.JFrame {
         txtStatus = new javax.swing.JTextField();
         lblError = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
         jPanel22 = new javax.swing.JPanel();
         jScrollPane10 = new javax.swing.JScrollPane();
         tblJournalMaker = new javax.swing.JTable();
@@ -197,6 +196,9 @@ public class FrmAdmin extends javax.swing.JFrame {
         btnDelete_INV = new javax.swing.JButton();
         cboINVperiod_INV = new javax.swing.JComboBox<>();
         cboProductName_INV = new javax.swing.JComboBox<>();
+        cboINVPeriodSorter_INV = new javax.swing.JComboBox<>();
+        jLabel76 = new javax.swing.JLabel();
+        btnSearchINV_INV = new javax.swing.JButton();
         jPanel12 = new javax.swing.JPanel();
         jPanel16 = new javax.swing.JPanel();
         jLabel60 = new javax.swing.JLabel();
@@ -224,7 +226,6 @@ public class FrmAdmin extends javax.swing.JFrame {
         tblOpExpend_PL = new javax.swing.JTable();
         jLabel12 = new javax.swing.JLabel();
         txtTotalOperationalExpenditure_PL = new javax.swing.JTextField();
-        lblRefresh_GL2 = new javax.swing.JLabel();
         jPanel18 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         txtNetProfitLoss_PL = new javax.swing.JTextField();
@@ -257,6 +258,7 @@ public class FrmAdmin extends javax.swing.JFrame {
         jPanel26 = new javax.swing.JPanel();
         jLabel40 = new javax.swing.JLabel();
         txtTotalCapitalnLiability_BS = new javax.swing.JTextField();
+        lblRefresh_PL1 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
@@ -264,6 +266,7 @@ public class FrmAdmin extends javax.swing.JFrame {
         jLabel21 = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
+        jLabel41 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -277,7 +280,7 @@ public class FrmAdmin extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("AMA | v.1");
         setBackground(new java.awt.Color(255, 255, 255));
-        setMinimumSize(new java.awt.Dimension(1200, 800));
+        setMinimumSize(new java.awt.Dimension(1500, 1100));
         setSize(getPreferredSize());
         getContentPane().setLayout(null);
 
@@ -301,7 +304,7 @@ public class FrmAdmin extends javax.swing.JFrame {
         jLabel34.setFont(new java.awt.Font("Orator Std", 0, 18)); // NOI18N
         jLabel34.setForeground(new java.awt.Color(255, 255, 255));
         jLabel34.setText("Chart NUMBER");
-        jPanel20.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 140, 20));
+        jPanel20.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 140, 20));
 
         jLabel35.setFont(new java.awt.Font("Orator Std", 0, 18)); // NOI18N
         jLabel35.setForeground(new java.awt.Color(255, 255, 255));
@@ -309,7 +312,7 @@ public class FrmAdmin extends javax.swing.JFrame {
         jPanel20.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 120, -1, 30));
 
         txtChartName_Journal.setEditable(false);
-        jPanel20.add(txtChartName_Journal, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 240, 210, 30));
+        jPanel20.add(txtChartName_Journal, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 240, 210, 30));
 
         jLabel39.setFont(new java.awt.Font("Orator Std", 0, 18)); // NOI18N
         jLabel39.setForeground(new java.awt.Color(255, 255, 255));
@@ -317,11 +320,11 @@ public class FrmAdmin extends javax.swing.JFrame {
         jPanel20.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 170, -1, -1));
 
         jLabel36.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/AMA JOURNAL.png"))); // NOI18N
-        jPanel20.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, -10, 560, 70));
+        jPanel20.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 560, 70));
 
         txtChartNumber_Journal.setEditable(false);
         txtChartNumber_Journal.setFont(new java.awt.Font("Orator Std", 0, 18)); // NOI18N
-        jPanel20.add(txtChartNumber_Journal, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 170, 150, 40));
+        jPanel20.add(txtChartNumber_Journal, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 170, 150, 40));
 
         txtDesc_Journal.setColumns(20);
         txtDesc_Journal.setRows(5);
@@ -374,7 +377,7 @@ public class FrmAdmin extends javax.swing.JFrame {
                 btnSearch_JournalActionPerformed(evt);
             }
         });
-        jPanel20.add(btnSearch_Journal, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 170, 50, 40));
+        jPanel20.add(btnSearch_Journal, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 170, 50, 40));
 
         dateChooser.setDateFormatString("yyyy-MM-dd");
         dateChooser.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -388,7 +391,7 @@ public class FrmAdmin extends javax.swing.JFrame {
         txtJID_Journal.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         txtJID_Journal.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtJID_Journal.setText("JID");
-        jPanel20.add(txtJID_Journal, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 120, 210, 40));
+        jPanel20.add(txtJID_Journal, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 120, 210, 40));
 
         btnDelete_Journal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/delete-button.gif"))); // NOI18N
         btnDelete_Journal.setContentAreaFilled(false);
@@ -474,12 +477,12 @@ public class FrmAdmin extends javax.swing.JFrame {
         jLabel47.setFont(new java.awt.Font("Orator Std", 0, 18)); // NOI18N
         jLabel47.setForeground(new java.awt.Color(255, 255, 255));
         jLabel47.setText("Chart Name");
-        jPanel20.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, -1, 30));
+        jPanel20.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, -1, 30));
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText("Status");
-        jPanel20.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 20, 80, -1));
+        jPanel20.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 30, 80, -1));
 
         jLabel24.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -497,7 +500,7 @@ public class FrmAdmin extends javax.swing.JFrame {
                 txtStatusActionPerformed(evt);
             }
         });
-        jPanel20.add(txtStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 20, 160, 30));
+        jPanel20.add(txtStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 30, 160, 30));
 
         lblError.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblError.setForeground(new java.awt.Color(255, 51, 51));
@@ -511,15 +514,7 @@ public class FrmAdmin extends javax.swing.JFrame {
                 jLabel1MouseClicked(evt);
             }
         });
-        jPanel20.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 20, -1, -1));
-
-        jButton1.setText("Exit");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        jPanel20.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 70, 160, -1));
+        jPanel20.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1250, 20, -1, -1));
 
         jPanel22.setBackground(new java.awt.Color(32, 47, 78));
         jPanel22.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -566,33 +561,32 @@ public class FrmAdmin extends javax.swing.JFrame {
         jPanel22Layout.setHorizontalGroup(
             jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel22Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel50)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txtTotalDebit_Journal, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel48)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtTotalCredit_Journal, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(179, 179, 179))
-            .addGroup(jPanel22Layout.createSequentialGroup()
                 .addGap(26, 26, 26)
                 .addComponent(jScrollPane10)
                 .addContainerGap())
+            .addGroup(jPanel22Layout.createSequentialGroup()
+                .addGap(635, 635, 635)
+                .addComponent(jLabel50)
+                .addGap(18, 18, 18)
+                .addComponent(txtTotalDebit_Journal, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel48)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(txtTotalCredit_Journal, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel22Layout.setVerticalGroup(
             jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel22Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane10, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtTotalCredit_Journal, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtTotalDebit_Journal, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel48, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel50, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(9, 9, 9))
+                .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtTotalDebit_Journal, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel50, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel48, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtTotalCredit_Journal, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
@@ -600,22 +594,17 @@ public class FrmAdmin extends javax.swing.JFrame {
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(jPanel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(jPanel20, javax.swing.GroupLayout.DEFAULT_SIZE, 1311, Short.MAX_VALUE))
+                .addGap(22, 22, 22)
+                .addComponent(jPanel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
+            .addComponent(jPanel20, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1318, Short.MAX_VALUE)
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(jPanel20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(74, Short.MAX_VALUE))
+                .addGap(20, 20, 20)
+                .addComponent(jPanel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         tab.addTab("Journal", jPanel7);
@@ -742,7 +731,7 @@ public class FrmAdmin extends javax.swing.JFrame {
                                 .addComponent(cboChart_GL, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(cboPeriod_GL, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 106, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(btnSearch_GL, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel32))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -756,27 +745,28 @@ public class FrmAdmin extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane3))
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGap(34, 34, 34)
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addComponent(jLabel10)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtTCredit_GL, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(37, 37, 37)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel6Layout.createSequentialGroup()
                                 .addComponent(jLabel9)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtTDebit_GL, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(71, 71, 71)
+                                .addGap(26, 26, 26)
+                                .addComponent(txtTDebit_GL, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addComponent(jLabel10)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txtTCredit_GL, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(61, 61, 61)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtBalance_GL, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel6Layout.createSequentialGroup()
                                 .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(163, 163, 163)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addComponent(txtBalance_GL, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGap(458, 458, 458)
                         .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnSave_GL, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(17, 17, 17)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnSave_GL, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         jPanel6Layout.setVerticalGroup(
@@ -797,42 +787,36 @@ public class FrmAdmin extends javax.swing.JFrame {
                                 .addComponent(cboPeriod_GL, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(txtStatus_GL)))
                     .addComponent(btnSearch_GL, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(13, 13, 13)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 518, Short.MAX_VALUE)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(99, 99, 99))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtTDebit_GL, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addGap(36, 36, 36)
-                                .addComponent(btnSave_GL, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(txtTDebit_GL, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(txtTCredit_GL, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtBalance_GL, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addContainerGap(100, Short.MAX_VALUE))))
+                            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(txtBalance_GL, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtTCredit_GL, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(btnSave_GL, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(30, 30, 30))
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, 1331, Short.MAX_VALUE)
+            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, 1318, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 755, Short.MAX_VALUE)
+            .addComponent(jPanel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 795, Short.MAX_VALUE)
         );
 
         tab.addTab("GL", jPanel2);
@@ -846,7 +830,7 @@ public class FrmAdmin extends javax.swing.JFrame {
         jLabel44.setForeground(new java.awt.Color(255, 255, 255));
         jLabel44.setText("Sort by");
 
-        jLabel45.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/AMA TRIAL BALANCE.png"))); // NOI18N
+        jLabel45.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/AMA TRIAL BALANCE 1.png"))); // NOI18N
 
         tblTB.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -900,42 +884,39 @@ public class FrmAdmin extends javax.swing.JFrame {
         jPanel23.setLayout(jPanel23Layout);
         jPanel23Layout.setHorizontalGroup(
             jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel23Layout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel23Layout.createSequentialGroup()
+                .addContainerGap(34, Short.MAX_VALUE)
                 .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel23Layout.createSequentialGroup()
-                        .addComponent(jLabel45, javax.swing.GroupLayout.PREFERRED_SIZE, 577, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(115, 115, 115)
+                        .addComponent(jLabel45, javax.swing.GroupLayout.PREFERRED_SIZE, 555, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel23Layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
                                 .addComponent(jLabel44)
-                                .addGap(0, 228, Short.MAX_VALUE))
-                            .addComponent(cboPeriod_TB, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(18, 18, 18)
-                        .addComponent(btnSearch_TB, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane5))
-                .addContainerGap())
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(cboPeriod_TB, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnSearch_TB, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(13, 13, 13))
+                    .addGroup(jPanel23Layout.createSequentialGroup()
+                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 1268, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
         );
         jPanel23Layout.setVerticalGroup(
             jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel23Layout.createSequentialGroup()
-                .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(26, 26, 26)
+                .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnSearch_TB, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel23Layout.createSequentialGroup()
-                        .addContainerGap(27, Short.MAX_VALUE)
-                        .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel45, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel23Layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jLabel44, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(cboPeriod_TB, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(10, 10, 10))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel23Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnSearch_TB, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 466, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 112, Short.MAX_VALUE))
+                        .addComponent(jLabel44, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(cboPeriod_TB, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel45, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 546, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 66, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
@@ -954,7 +935,7 @@ public class FrmAdmin extends javax.swing.JFrame {
         jPanel11.setBackground(new java.awt.Color(32, 47, 78));
 
         jPanel3.setBackground(new java.awt.Color(32, 47, 78));
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Quick Add", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(255, 255, 255))); // NOI18N
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Quick Add", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 13), new java.awt.Color(255, 255, 255))); // NOI18N
 
         jLabel64.setFont(new java.awt.Font("Orator Std", 0, 27)); // NOI18N
         jLabel64.setForeground(new java.awt.Color(255, 255, 255));
@@ -1000,6 +981,9 @@ public class FrmAdmin extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(lblRefreshProduct_GL))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel64, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtPID_INV, javax.swing.GroupLayout.DEFAULT_SIZE, 291, Short.MAX_VALUE)
@@ -1008,11 +992,8 @@ public class FrmAdmin extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(btnAddProduct_INV, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 86, Short.MAX_VALUE)
-                        .addComponent(btnLaunchSearcher))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(lblRefreshProduct_GL)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnLaunchSearcher)))
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
@@ -1024,14 +1005,15 @@ public class FrmAdmin extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtPID_INV, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel65, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtPName_INV, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnAddProduct_INV, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnLaunchSearcher)
-                .addContainerGap())
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel65, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtPName_INV, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnAddProduct_INV, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnLaunchSearcher))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel15.setBackground(new java.awt.Color(32, 47, 78));
@@ -1064,7 +1046,7 @@ public class FrmAdmin extends javax.swing.JFrame {
         jScrollPane7.setViewportView(tblBuyProduct);
 
         jPanel15.add(jScrollPane7);
-        jScrollPane7.setBounds(460, 70, 430, 240);
+        jScrollPane7.setBounds(460, 70, 430, 200);
 
         cboSorterBuyProduct_INV.setFont(new java.awt.Font("Lucida Console", 0, 14)); // NOI18N
         cboSorterBuyProduct_INV.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Product Name.." }));
@@ -1170,13 +1152,13 @@ public class FrmAdmin extends javax.swing.JFrame {
 
         txtAvg_INV.setEditable(false);
         jPanel15.add(txtAvg_INV);
-        txtAvg_INV.setBounds(570, 320, 220, 30);
+        txtAvg_INV.setBounds(580, 290, 220, 30);
 
         jLabel66.setFont(new java.awt.Font("Orator Std", 0, 23)); // NOI18N
         jLabel66.setForeground(new java.awt.Color(255, 255, 255));
         jLabel66.setText("Average");
         jPanel15.add(jLabel66);
-        jLabel66.setBounds(460, 320, 112, 37);
+        jLabel66.setBounds(460, 290, 112, 37);
 
         jLabel67.setFont(new java.awt.Font("Orator Std", 0, 18)); // NOI18N
         jLabel67.setForeground(new java.awt.Color(255, 255, 255));
@@ -1195,7 +1177,7 @@ public class FrmAdmin extends javax.swing.JFrame {
 
         txtTRID.setEditable(false);
         jPanel15.add(txtTRID);
-        txtTRID.setBounds(90, 30, 130, 30);
+        txtTRID.setBounds(90, 30, 110, 30);
 
         jLabel75.setFont(new java.awt.Font("Orator Std", 0, 18)); // NOI18N
         jLabel75.setForeground(new java.awt.Color(255, 255, 255));
@@ -1384,6 +1366,25 @@ public class FrmAdmin extends javax.swing.JFrame {
             }
         });
 
+        cboINVPeriodSorter_INV.setFont(new java.awt.Font("Lucida Console", 0, 18)); // NOI18N
+        cboINVPeriodSorter_INV.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Period.." }));
+        cboINVPeriodSorter_INV.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cboINVPeriodSorter_INVMouseClicked(evt);
+            }
+        });
+
+        jLabel76.setFont(new java.awt.Font("Orator Std", 0, 27)); // NOI18N
+        jLabel76.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel76.setText("Sort by");
+
+        btnSearchINV_INV.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/mini search.png"))); // NOI18N
+        btnSearchINV_INV.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSearchINV_INVActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
         jPanel14.setLayout(jPanel14Layout);
         jPanel14Layout.setHorizontalGroup(
@@ -1395,11 +1396,18 @@ public class FrmAdmin extends javax.swing.JFrame {
                         .addComponent(jLabel54)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 248, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel14Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jLabel53)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel76, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cboINVPeriodSorter_INV, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnSearchINV_INV, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(130, 130, 130)
                         .addComponent(lblRefreshInventory_INV)
                         .addGap(25, 25, 25))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel14Layout.createSequentialGroup()
@@ -1431,7 +1439,7 @@ public class FrmAdmin extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(txtOpening_INV)))
                                 .addGap(30, 30, 30)))
-                        .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel14Layout.createSequentialGroup()
                                 .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel73, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1445,7 +1453,7 @@ public class FrmAdmin extends javax.swing.JFrame {
                                     .addComponent(txtEnd_INV, javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(txtOut_INV, javax.swing.GroupLayout.Alignment.TRAILING)))
                             .addComponent(cboINVperiod_INV, 0, 193, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jScrollPane6)))
                 .addContainerGap())
         );
@@ -1454,22 +1462,34 @@ public class FrmAdmin extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel14Layout.createSequentialGroup()
                 .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel14Layout.createSequentialGroup()
-                        .addComponent(jLabel53, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
                         .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cboINVperiod_INV, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel56, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txtID_INV, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(18, 18, 18)
+                            .addGroup(jPanel14Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(lblRefreshInventory_INV))
+                            .addComponent(jLabel53, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel14Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel76, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cboINVPeriodSorter_INV, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnSearchINV_INV, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel14Layout.createSequentialGroup()
+                        .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel56, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtID_INV, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cboINVperiod_INV, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel14Layout.createSequentialGroup()
                                 .addComponent(txtIn_INV, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(txtOut_INV, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(txtEnd_INV, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(txtValue_INV, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel74, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -1493,12 +1513,8 @@ public class FrmAdmin extends javax.swing.JFrame {
                                     .addComponent(btnAdd_INV, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(btnUpdate_INV, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                                     .addComponent(btnDelete_INV, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))))
-                    .addGroup(jPanel14Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(lblRefreshInventory_INV)
-                        .addGap(54, 54, 54)
-                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(85, 85, 85)
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(70, 70, 70)
                 .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jTextField1)
                     .addComponent(jLabel54, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE))
@@ -1524,12 +1540,12 @@ public class FrmAdmin extends javax.swing.JFrame {
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel11Layout.createSequentialGroup()
-                .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(17, 17, 17)
+                .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, 372, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 378, Short.MAX_VALUE)
-                    .addComponent(jPanel15, javax.swing.GroupLayout.DEFAULT_SIZE, 378, Short.MAX_VALUE))
-                .addContainerGap())
+                    .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(60, Short.MAX_VALUE))
         );
 
         tab.addTab("Inventory", jPanel11);
@@ -1559,6 +1575,9 @@ public class FrmAdmin extends javax.swing.JFrame {
                 btnSearch_PLActionPerformed(evt);
             }
         });
+
+        jPanel4.setBackground(new java.awt.Color(32, 47, 78));
+        jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 153)));
 
         tblSalesRevenue_PL.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -1591,9 +1610,11 @@ public class FrmAdmin extends javax.swing.JFrame {
         }
 
         jLabel2.setFont(new java.awt.Font("Adobe Caslon Pro Bold", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Total Sales Revenue");
 
-        jLabel4.setFont(new java.awt.Font("Adobe Caslon Pro Bold", 1, 36)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Orator Std", 1, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Sales Revenue");
 
         txtTotalSalesRevenue_PL.setEditable(false);
@@ -1604,7 +1625,6 @@ public class FrmAdmin extends javax.swing.JFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(10, 10, 10)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -1612,7 +1632,10 @@ public class FrmAdmin extends javax.swing.JFrame {
                             .addGroup(jPanel4Layout.createSequentialGroup()
                                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(25, 25, 25)
-                                .addComponent(txtTotalSalesRevenue_PL)))))
+                                .addComponent(txtTotalSalesRevenue_PL))))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
@@ -1628,6 +1651,9 @@ public class FrmAdmin extends javax.swing.JFrame {
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(txtTotalSalesRevenue_PL, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
+
+        jPanel5.setBackground(new java.awt.Color(32, 47, 78));
+        jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 153)));
 
         tblCOGS_PL.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -1659,10 +1685,12 @@ public class FrmAdmin extends javax.swing.JFrame {
             tblCOGS_PL.getColumnModel().getColumn(1).setResizable(false);
         }
 
-        jLabel5.setFont(new java.awt.Font("Adobe Caslon Pro Bold", 1, 18)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Orator Std", 1, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Total COGS");
 
-        jLabel6.setFont(new java.awt.Font("Adobe Caslon Pro Bold", 1, 36)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Orator Std", 1, 24)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Cost Of Good Sold");
 
         txtTotalCOGS_PL.setEditable(false);
@@ -1674,15 +1702,15 @@ public class FrmAdmin extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 503, Short.MAX_VALUE)
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(39, 39, 39)
-                        .addComponent(txtTotalCOGS_PL)))
+                        .addComponent(txtTotalCOGS_PL))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1697,7 +1725,11 @@ public class FrmAdmin extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jPanel9.setBackground(new java.awt.Color(32, 47, 78));
+        jPanel9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 153)));
+
         jLabel7.setFont(new java.awt.Font("Adobe Caslon Pro Bold", 1, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Gross Profit (Loss)");
 
         txtGrossProfitLoss_PL.setEditable(false);
@@ -1706,28 +1738,34 @@ public class FrmAdmin extends javax.swing.JFrame {
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(328, Short.MAX_VALUE))
             .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel9Layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(39, 39, 39)
+                    .addGap(236, 236, 236)
                     .addComponent(txtGrossProfitLoss_PL)
                     .addContainerGap()))
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 55, Short.MAX_VALUE)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel9Layout.createSequentialGroup()
                     .addGap(8, 8, 8)
-                    .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(txtGrossProfitLoss_PL, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtGrossProfitLoss_PL, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
-        jLabel8.setFont(new java.awt.Font("Adobe Caslon Pro Bold", 1, 36)); // NOI18N
+        jPanel10.setBackground(new java.awt.Color(32, 47, 78));
+        jPanel10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 153)));
+
+        jLabel8.setFont(new java.awt.Font("Orator Std", 1, 24)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Operational Expenditure");
 
         tblOpExpend_PL.setModel(new javax.swing.table.DefaultTableModel(
@@ -1760,12 +1798,11 @@ public class FrmAdmin extends javax.swing.JFrame {
             tblOpExpend_PL.getColumnModel().getColumn(1).setResizable(false);
         }
 
-        jLabel12.setFont(new java.awt.Font("Adobe Caslon Pro Bold", 1, 18)); // NOI18N
+        jLabel12.setFont(new java.awt.Font("Orator Std", 1, 18)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("Total Operational Expenditure");
 
         txtTotalOperationalExpenditure_PL.setEditable(false);
-
-        lblRefresh_GL2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/arrow_refresh.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
@@ -1774,40 +1811,34 @@ public class FrmAdmin extends javax.swing.JFrame {
             .addGroup(jPanel10Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane4)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 674, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
+                        .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtTotalOperationalExpenditure_PL, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel10Layout.createSequentialGroup()
-                        .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
-                        .addComponent(txtTotalOperationalExpenditure_PL, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jLabel8)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(jPanel10Layout.createSequentialGroup()
-                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 431, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel10Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(lblRefresh_GL2)
-                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel10Layout.createSequentialGroup()
                 .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(1, 1, 1)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtTotalOperationalExpenditure_PL, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
-            .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel10Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(lblRefresh_GL2)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                .addGap(45, 45, 45))
         );
 
-        jLabel14.setFont(new java.awt.Font("Adobe Caslon Pro Bold", 1, 36)); // NOI18N
+        jPanel18.setBackground(new java.awt.Color(32, 47, 78));
+        jPanel18.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 153)));
+
+        jLabel14.setFont(new java.awt.Font("Orator Std", 1, 24)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setText("Net Profit (Loss)");
 
         txtNetProfitLoss_PL.setEditable(false);
@@ -1850,51 +1881,58 @@ public class FrmAdmin extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel16Layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(10, 10, 10)
+                        .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel16Layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(10, 10, 10))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel16Layout.createSequentialGroup()
+                                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
                         .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jPanel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addContainerGap(60, Short.MAX_VALUE))
+                        .addGap(0, 17, Short.MAX_VALUE))
                     .addGroup(jPanel16Layout.createSequentialGroup()
                         .addComponent(jLabel60, javax.swing.GroupLayout.PREFERRED_SIZE, 456, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(129, 129, 129)
-                        .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(cboPeriod_PL, 0, 229, Short.MAX_VALUE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnSearch_PL, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lblRefresh_PL)
-                        .addContainerGap())))
+                        .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cboPeriod_PL, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
+                        .addComponent(btnSearch_PL, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(116, 116, 116)
+                        .addComponent(lblRefresh_PL)))
+                .addContainerGap())
         );
         jPanel16Layout.setVerticalGroup(
             jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel16Layout.createSequentialGroup()
-                .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel60, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(jPanel16Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnSearch_PL, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanel16Layout.createSequentialGroup()
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(cboPeriod_PL, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(lblRefresh_PL, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
-                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(jPanel16Layout.createSequentialGroup()
-                .addGap(103, 103, 103)
-                .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, 466, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel16Layout.createSequentialGroup()
+                        .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel60, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel16Layout.createSequentialGroup()
+                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cboPeriod_PL, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lblRefresh_PL, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 21, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
@@ -1910,8 +1948,8 @@ public class FrmAdmin extends javax.swing.JFrame {
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel12Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         tab.addTab("Profit-Loss", jPanel12);
@@ -1924,15 +1962,34 @@ public class FrmAdmin extends javax.swing.JFrame {
         jLabel61.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/AMA BALANCE SHEET.png"))); // NOI18N
 
         cboPeriod_BS.setFont(new java.awt.Font("Lucida Console", 0, 18)); // NOI18N
-        cboPeriod_BS.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" }));
+        cboPeriod_BS.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Period.." }));
+        cboPeriod_BS.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cboPeriod_BSMouseClicked(evt);
+            }
+        });
+        cboPeriod_BS.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cboPeriod_BSActionPerformed(evt);
+            }
+        });
 
         jLabel11.setFont(new java.awt.Font("Orator Std", 0, 36)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("SORT BY");
 
         btnSearch_BS.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Search Engine.png"))); // NOI18N
+        btnSearch_BS.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSearch_BSActionPerformed(evt);
+            }
+        });
 
-        jLabel25.setFont(new java.awt.Font("Adobe Caslon Pro Bold", 1, 36)); // NOI18N
+        jPanel21.setBackground(new java.awt.Color(32, 47, 78));
+        jPanel21.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 153)));
+
+        jLabel25.setFont(new java.awt.Font("Orator Std", 1, 24)); // NOI18N
+        jLabel25.setForeground(new java.awt.Color(255, 255, 255));
         jLabel25.setText("Liability");
 
         tblLiability_BS.setModel(new javax.swing.table.DefaultTableModel(
@@ -1965,7 +2022,8 @@ public class FrmAdmin extends javax.swing.JFrame {
             tblLiability_BS.getColumnModel().getColumn(1).setResizable(false);
         }
 
-        jLabel26.setFont(new java.awt.Font("Adobe Caslon Pro Bold", 1, 18)); // NOI18N
+        jLabel26.setFont(new java.awt.Font("Orator Std", 1, 18)); // NOI18N
+        jLabel26.setForeground(new java.awt.Color(255, 255, 255));
         jLabel26.setText("Total Liability");
 
         txtTotalLiability_BS.setEditable(false);
@@ -1977,7 +2035,7 @@ public class FrmAdmin extends javax.swing.JFrame {
             .addGroup(jPanel21Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane8)
+                    .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 647, Short.MAX_VALUE)
                     .addGroup(jPanel21Layout.createSequentialGroup()
                         .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 431, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
@@ -2000,7 +2058,11 @@ public class FrmAdmin extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jLabel27.setFont(new java.awt.Font("Adobe Caslon Pro Bold", 1, 36)); // NOI18N
+        jPanel24.setBackground(new java.awt.Color(32, 47, 78));
+        jPanel24.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 153)));
+
+        jLabel27.setFont(new java.awt.Font("Orator Std", 1, 24)); // NOI18N
+        jLabel27.setForeground(new java.awt.Color(255, 255, 255));
         jLabel27.setText("Asset");
 
         tblAsset_BS.setModel(new javax.swing.table.DefaultTableModel(
@@ -2033,7 +2095,8 @@ public class FrmAdmin extends javax.swing.JFrame {
             tblAsset_BS.getColumnModel().getColumn(1).setResizable(false);
         }
 
-        jLabel28.setFont(new java.awt.Font("Adobe Caslon Pro Bold", 1, 18)); // NOI18N
+        jLabel28.setFont(new java.awt.Font("Orator Std", 1, 24)); // NOI18N
+        jLabel28.setForeground(new java.awt.Color(255, 255, 255));
         jLabel28.setText("Total Asset");
 
         txtTotalAsset_BS.setEditable(false);
@@ -2048,28 +2111,32 @@ public class FrmAdmin extends javax.swing.JFrame {
                     .addComponent(jScrollPane11)
                     .addGroup(jPanel24Layout.createSequentialGroup()
                         .addGroup(jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 431, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel24Layout.createSequentialGroup()
                                 .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(30, 30, 30)
-                                .addComponent(txtTotalAsset_BS, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 431, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 36, Short.MAX_VALUE)))
+                                .addGap(34, 34, 34)
+                                .addComponent(txtTotalAsset_BS, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 32, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel24Layout.setVerticalGroup(
             jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel24Layout.createSequentialGroup()
                 .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(1, 1, 1)
-                .addComponent(jScrollPane11)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane11, javax.swing.GroupLayout.DEFAULT_SIZE, 536, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtTotalAsset_BS, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtTotalAsset_BS, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
-        jLabel29.setFont(new java.awt.Font("Adobe Caslon Pro Bold", 1, 36)); // NOI18N
+        jPanel25.setBackground(new java.awt.Color(32, 47, 78));
+        jPanel25.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 153)));
+
+        jLabel29.setFont(new java.awt.Font("Orator Std", 1, 24)); // NOI18N
+        jLabel29.setForeground(new java.awt.Color(255, 255, 255));
         jLabel29.setText("Capital");
 
         tblCapital_BS.setModel(new javax.swing.table.DefaultTableModel(
@@ -2102,7 +2169,8 @@ public class FrmAdmin extends javax.swing.JFrame {
             tblCapital_BS.getColumnModel().getColumn(1).setResizable(false);
         }
 
-        jLabel30.setFont(new java.awt.Font("Adobe Caslon Pro Bold", 1, 18)); // NOI18N
+        jLabel30.setFont(new java.awt.Font("Orator Std", 1, 18)); // NOI18N
+        jLabel30.setForeground(new java.awt.Color(255, 255, 255));
         jLabel30.setText("Total Capital");
 
         txtTotalCapital_BS.setEditable(false);
@@ -2137,7 +2205,11 @@ public class FrmAdmin extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jLabel40.setFont(new java.awt.Font("Adobe Caslon Pro Bold", 1, 24)); // NOI18N
+        jPanel26.setBackground(new java.awt.Color(32, 47, 78));
+        jPanel26.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 153)));
+
+        jLabel40.setFont(new java.awt.Font("Orator Std", 1, 24)); // NOI18N
+        jLabel40.setForeground(new java.awt.Color(255, 255, 255));
         jLabel40.setText("Total Liability & Capital");
 
         txtTotalCapitalnLiability_BS.setEditable(false);
@@ -2151,8 +2223,8 @@ public class FrmAdmin extends javax.swing.JFrame {
                 .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtTotalCapitalnLiability_BS)
                     .addGroup(jPanel26Layout.createSequentialGroup()
-                        .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 247, Short.MAX_VALUE)))
+                        .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 378, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel26Layout.setVerticalGroup(
@@ -2163,6 +2235,13 @@ public class FrmAdmin extends javax.swing.JFrame {
                 .addComponent(txtTotalCapitalnLiability_BS, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 13, Short.MAX_VALUE))
         );
+
+        lblRefresh_PL1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/arrow_refresh.png"))); // NOI18N
+        lblRefresh_PL1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblRefresh_PL1MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel19Layout = new javax.swing.GroupLayout(jPanel19);
         jPanel19.setLayout(jPanel19Layout);
@@ -2175,10 +2254,10 @@ public class FrmAdmin extends javax.swing.JFrame {
                         .addGap(10, 10, 10)
                         .addComponent(jPanel24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jPanel21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jPanel25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jPanel26, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(jPanel19Layout.createSequentialGroup()
                         .addComponent(jLabel61, javax.swing.GroupLayout.PREFERRED_SIZE, 489, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -2186,25 +2265,31 @@ public class FrmAdmin extends javax.swing.JFrame {
                             .addComponent(cboPeriod_BS, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnSearch_BS, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(121, Short.MAX_VALUE))
+                        .addComponent(btnSearch_BS, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lblRefresh_PL1)))
+                .addContainerGap())
         );
         jPanel19Layout.setVerticalGroup(
             jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel19Layout.createSequentialGroup()
-                .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(btnSearch_BS, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel61, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanel19Layout.createSequentialGroup()
-                            .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(cboPeriod_BS, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(btnSearch_BS, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel61, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel19Layout.createSequentialGroup()
+                                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cboPeriod_BS, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jPanel19Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(lblRefresh_PL1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel19Layout.createSequentialGroup()
                         .addComponent(jPanel21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(18, 18, 18)
                         .addComponent(jPanel25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jPanel26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -2232,13 +2317,13 @@ public class FrmAdmin extends javax.swing.JFrame {
         jPanel13.setLayout(jPanel13Layout);
         jPanel13Layout.setHorizontalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1331, Short.MAX_VALUE)
+            .addGap(0, 1318, Short.MAX_VALUE)
             .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(jPanel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel13Layout.setVerticalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 760, Short.MAX_VALUE)
+            .addGap(0, 795, Short.MAX_VALUE)
             .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(jPanel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -2246,32 +2331,32 @@ public class FrmAdmin extends javax.swing.JFrame {
         tab.addTab("Balance Sheet", jPanel13);
 
         getContentPane().add(tab);
-        tab.setBounds(-20, 0, 1420, 760);
+        tab.setBounds(-20, 220, 1420, 800);
 
         jLabel19.setFont(new java.awt.Font("Open Sans", 0, 24)); // NOI18N
         jLabel19.setText("KEY");
         getContentPane().add(jLabel19);
-        jLabel19.setBounds(710, 140, 100, 30);
+        jLabel19.setBounds(590, 90, 100, 30);
 
         jLabel20.setFont(new java.awt.Font("Open Sans", 0, 24)); // NOI18N
         jLabel20.setText("TO SUCCESS");
         getContentPane().add(jLabel20);
-        jLabel20.setBounds(650, 170, 160, 30);
+        jLabel20.setBounds(530, 120, 160, 30);
 
         jLabel23.setFont(new java.awt.Font("Open Sans", 0, 24)); // NOI18N
         jLabel23.setText("ANYONE ELSE");
         getContentPane().add(jLabel23);
-        jLabel23.setBounds(650, 230, 270, 30);
+        jLabel23.setBounds(530, 180, 270, 30);
 
         jLabel22.setFont(new java.awt.Font("Open Sans", 0, 24)); // NOI18N
         jLabel22.setText("IS TO START BEFORE");
         getContentPane().add(jLabel22);
-        jLabel22.setBounds(650, 200, 270, 30);
+        jLabel22.setBounds(530, 150, 270, 30);
 
         jLabel21.setFont(new java.awt.Font("Open Sans", 0, 24)); // NOI18N
         jLabel21.setText("THE");
         getContentPane().add(jLabel21);
-        jLabel21.setBounds(650, 140, 100, 30);
+        jLabel21.setBounds(530, 90, 100, 30);
 
         jLabel33.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/333333.png"))); // NOI18N
         getContentPane().add(jLabel33);
@@ -2280,6 +2365,10 @@ public class FrmAdmin extends javax.swing.JFrame {
         jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/33.png"))); // NOI18N
         getContentPane().add(jLabel17);
         jLabel17.setBounds(1060, 60, 420, 740);
+
+        jLabel41.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/key.gif"))); // NOI18N
+        getContentPane().add(jLabel41);
+        jLabel41.setBounds(0, 0, 650, 230);
 
         jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/AMA - Boarder.png"))); // NOI18N
         jLabel15.setText("jLabel15");
@@ -2562,15 +2651,6 @@ public class FrmAdmin extends javax.swing.JFrame {
         executeRefresh();
     }//GEN-LAST:event_jLabel1MouseClicked
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        System.exit(0);
-        try {
-            deletePreviousData();
-        } catch (SQLException ex) {
-            Logger.getLogger(FrmAdmin.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_jButton1ActionPerformed
-
     private void tabMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabMouseClicked
 
 
@@ -2637,7 +2717,6 @@ public class FrmAdmin extends javax.swing.JFrame {
             removeTableData_BuyProduct();
             loadSpecificBuyProduct();
             generateAvg();
-            btnAddProduct_INV.setEnabled(false);
         }
     }//GEN-LAST:event_btnNewBuyProduct_INVActionPerformed
 
@@ -2678,6 +2757,7 @@ public class FrmAdmin extends javax.swing.JFrame {
     private void lblRefreshTransactionProduct_GLMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblRefreshTransactionProduct_GLMouseClicked
         executeRefreshBuyProduct();
         btnSearchBuyProduct_INV.setEnabled(true);
+        txtAvg_INV.setText("");
         removeTableData_BuyProduct();
     }//GEN-LAST:event_lblRefreshTransactionProduct_GLMouseClicked
 
@@ -2706,9 +2786,21 @@ public class FrmAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_cboProduct_INVActionPerformed
 
     private void lblRefreshInventory_INVMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblRefreshInventory_INVMouseClicked
+        comboinvperiodsorter();
+        comboAddINV_Product();
+        comboProduct_INV();
         removeTableData_INV();
-        loadINV();
-        refreshFormINV();
+        removeTableData_BuyProduct();
+        txtAvg_INV.setText("");
+        txtID_INV.setText("");
+        txtProductPrice_INV.setText("");
+        txtOpening_INV.setText("");
+        txtIn_INV.setText("");
+        txtOut_INV.setText("");
+        txtEnd_INV.setText("");
+        txtValue_INV.setText("");
+        btnSearchBuyProduct_INV.setEnabled(true);
+
     }//GEN-LAST:event_lblRefreshInventory_INVMouseClicked
 
     private void lblRefreshInventory_INVMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblRefreshInventory_INVMouseEntered
@@ -2763,6 +2855,8 @@ public class FrmAdmin extends javax.swing.JFrame {
             } else {
                 executeInsertINV();
                 removeTableData_INV();
+                comboinvperiodsorter();
+                cboINVPeriodSorter_INV.setSelectedItem(cboINVperiod_INV.getSelectedItem().toString());
                 loadINV();
             }
 
@@ -2865,6 +2959,7 @@ public class FrmAdmin extends javax.swing.JFrame {
             loadSalesRevenue_PL();
             loadOperExp_PL();
             loadCOGS_PL();
+            generateTotalGrossnNet_PL();
         }
 
 
@@ -2876,8 +2971,75 @@ public class FrmAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_cboChart_GLMouseClicked
 
     private void lblRefresh_PLMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblRefresh_PLMouseClicked
-      btnSearch_PL.setEnabled(true);
+        btnSearch_PL.setEnabled(true);
+        removeTableData_PL();
     }//GEN-LAST:event_lblRefresh_PLMouseClicked
+
+    private void cboINVPeriodSorter_INVMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cboINVPeriodSorter_INVMouseClicked
+        comboinvperiodsorter();
+    }//GEN-LAST:event_cboINVPeriodSorter_INVMouseClicked
+
+    private void btnSearchINV_INVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchINV_INVActionPerformed
+
+        checkINV();
+        if (datainvcounter > 0) {
+            loadINV();
+        } else {
+            Sutil.msg(this, "No data for this category.");
+        }
+
+    }//GEN-LAST:event_btnSearchINV_INVActionPerformed
+    private Double endinginv_bs, openinginv_bs;
+    private void btnSearch_BSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearch_BSActionPerformed
+        if (cboPeriod_BS.getSelectedItem().equals("Period..")) {
+            Sutil.msg(this, "Please refresh combobox.");
+        } else {
+            try {
+                btnSearch_BS.setEnabled(false);
+                removeTableData_BS();
+                
+                String getSql = "SELECT sum(price*opening) as opening_balance, sum(value_end) as ending_balance FROM akuntansi.inventory where period=?;";
+                PreparedStatement pstatementINV_BS = conn.prepareStatement(getSql);
+                pstatementINV_BS.setString(1, cboPeriod_BS.getSelectedItem().toString());
+                ResultSet rs_inv_bs = pstatementINV_BS.executeQuery();
+                if (rs_inv_bs.isBeforeFirst()) { // check is resultset not empty
+                    DefaultTableModel model = (DefaultTableModel) tblAsset_BS.getModel();
+                     DefaultTableModel model2 = (DefaultTableModel) tblCapital_BS.getModel();
+                    while (rs_inv_bs.next()) {
+                        openinginv_bs = rs_inv_bs.getDouble("opening_balance");
+                        endinginv_bs= rs_inv_bs.getDouble("ending_balance");
+                        Object data[] = {"Inventory", endinginv_bs};
+                         Object data2[] = {"Retained Earning", netprofitloss};
+                        model.addRow(data);
+                        model2.addRow(data2);
+                    }
+                }
+                
+                
+                loadAsset_BS();
+                loadLiability_BS();
+                loadCapital_BS();
+                Double capital = Double.valueOf(txtTotalCapital_BS.getText().trim());
+                Double liability= Double.valueOf(txtTotalLiability_BS.getText().trim());
+                txtTotalCapitalnLiability_BS.setText(String.valueOf((long)(capital+liability)));
+            } catch (SQLException ex) {
+                Logger.getLogger(FrmAdmin.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }//GEN-LAST:event_btnSearch_BSActionPerformed
+
+    private void cboPeriod_BSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboPeriod_BSActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cboPeriod_BSActionPerformed
+
+    private void cboPeriod_BSMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cboPeriod_BSMouseClicked
+        comboPeriod_BS();
+    }//GEN-LAST:event_cboPeriod_BSMouseClicked
+
+    private void lblRefresh_PL1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblRefresh_PL1MouseClicked
+        removeTableData_BS();
+        btnSearch_BS.setEnabled(true);
+    }//GEN-LAST:event_lblRefresh_PL1MouseClicked
 
     // METHODS
     private void setElements() {
@@ -3377,6 +3539,7 @@ public class FrmAdmin extends javax.swing.JFrame {
     private javax.swing.JButton btnSaveData_Journal;
     private javax.swing.JButton btnSave_GL;
     private javax.swing.JButton btnSearchBuyProduct_INV;
+    private javax.swing.JButton btnSearchINV_INV;
     private javax.swing.JButton btnSearch_BS;
     private javax.swing.JButton btnSearch_GL;
     private javax.swing.JButton btnSearch_Journal;
@@ -3387,6 +3550,7 @@ public class FrmAdmin extends javax.swing.JFrame {
     private javax.swing.JButton btnUpdate_Journal;
     private javax.swing.JButton btnView_Journal;
     private javax.swing.JComboBox<String> cboChart_GL;
+    private javax.swing.JComboBox<String> cboINVPeriodSorter_INV;
     private javax.swing.JComboBox<String> cboINVperiod_INV;
     private javax.swing.JComboBox<String> cboPeriod_BS;
     private javax.swing.JComboBox<String> cboPeriod_GL;
@@ -3397,7 +3561,6 @@ public class FrmAdmin extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cboSorterBuyProduct_INV;
     private com.toedter.calendar.JDateChooser dateChooser;
     private com.toedter.calendar.JDateChooser dtcProductAdded_INV;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -3433,6 +3596,7 @@ public class FrmAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel45;
     private javax.swing.JLabel jLabel47;
@@ -3464,6 +3628,7 @@ public class FrmAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel73;
     private javax.swing.JLabel jLabel74;
     private javax.swing.JLabel jLabel75;
+    private javax.swing.JLabel jLabel76;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
@@ -3516,8 +3681,8 @@ public class FrmAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel lblRefreshProduct_GL;
     private javax.swing.JLabel lblRefreshTransactionProduct_GL;
     private javax.swing.JLabel lblRefresh_GL;
-    private javax.swing.JLabel lblRefresh_GL2;
     private javax.swing.JLabel lblRefresh_PL;
+    private javax.swing.JLabel lblRefresh_PL1;
     private javax.swing.JMenuItem menuLogOut;
     private javax.swing.JMenuItem menuRefresh;
     private javax.swing.JSpinner spiQty_INV;
@@ -3829,11 +3994,11 @@ public class FrmAdmin extends javax.swing.JFrame {
             pstatement_countpid.close();
 
             if (counterpid == 0) {
-                pno = 1;
-                pid = "P-00" + pno;
-            } else {
-                pid = "P-00" + (pno + 1);
-
+                 pno = 1;
+                pid = "P-00" + String.valueOf(pno);
+            } else if(counterpid>0) {
+                 pno=pno+1;
+                pid = "P-00" + String.valueOf(pno);
             }
             txtPID_INV.setText(pid);
 
@@ -3851,7 +4016,7 @@ public class FrmAdmin extends javax.swing.JFrame {
             String insertProductSql = "insert into akuntansi.productlist values (?,?,?)";
             PreparedStatement pstatement_insertproduct = conn.prepareStatement(insertProductSql);
             pstatement_insertproduct.setString(1, txtPID_INV.getText());
-            pstatement_insertproduct.setInt(2, pno + 1);
+            pstatement_insertproduct.setInt(2, (pno));
             pstatement_insertproduct.setString(3, txtPName_INV.getText());
             pstatement_insertproduct.executeUpdate();
 
@@ -4070,19 +4235,20 @@ public class FrmAdmin extends javax.swing.JFrame {
             int in = Integer.valueOf(txtIn_INV.getText());
             int out = Integer.valueOf(txtOut_INV.getText());
             int end = Integer.valueOf(txtEnd_INV.getText());
-            String insertBuySql = "insert into inventory values (?,?,?,?,?,?,?,?,?,?,?)";
+            String insertBuySql = "insert into inventory values (?,?,?,?,?,?,?,?,?,?,?,?)";
             PreparedStatement pstatement_addINV = conn.prepareStatement(insertBuySql);
             pstatement_addINV.setString(1, id_inv);
-            pstatement_addINV.setString(2, String.valueOf(cboINVperiod_INV.getSelectedItem().toString()));
-            pstatement_addINV.setString(3, String.valueOf(cboProductName_INV.getSelectedItem()));
-            pstatement_addINV.setDouble(4, price);
-            pstatement_addINV.setInt(5, open);
-            pstatement_addINV.setInt(6, in);
-            pstatement_addINV.setDouble(7, price * in);
-            pstatement_addINV.setInt(8, out);
-            pstatement_addINV.setDouble(9, price * out);
-            pstatement_addINV.setInt(10, end);
-            pstatement_addINV.setDouble(11, Double.valueOf(txtValue_INV.getText()));
+            pstatement_addINV.setInt(2, no_inv);
+            pstatement_addINV.setString(3, String.valueOf(cboINVperiod_INV.getSelectedItem().toString()));
+            pstatement_addINV.setString(4, String.valueOf(cboProductName_INV.getSelectedItem()));
+            pstatement_addINV.setDouble(5, price);
+            pstatement_addINV.setInt(6, open);
+            pstatement_addINV.setInt(7, in);
+            pstatement_addINV.setDouble(8, price * in);
+            pstatement_addINV.setInt(9, out);
+            pstatement_addINV.setDouble(10, price * out);
+            pstatement_addINV.setInt(11, end);
+            pstatement_addINV.setDouble(12, Double.valueOf(txtValue_INV.getText()));
             pstatement_addINV.executeUpdate();
             pstatement_addINV.close();
             Sutil.msg(this, "Inventory added successfully.");
@@ -4157,8 +4323,9 @@ public class FrmAdmin extends javax.swing.JFrame {
 
     private void loadINV() {
         try {
-            String sql = "select * from inventory;";
+            String sql = "select * from inventory where period=?;";
             PreparedStatement pstatement = conn.prepareStatement(sql);
+            pstatement.setString(1, cboINVPeriodSorter_INV.getSelectedItem().toString());
             DefaultTableModel model = (DefaultTableModel) tblInventory_INV.getModel();
             ResultSet rs = pstatement.executeQuery();
             while (rs.next()) {
@@ -4358,11 +4525,11 @@ public class FrmAdmin extends javax.swing.JFrame {
 
             }
 
-            String maxinv_sql = "select max(inv_id) from inventory ;";
+            String maxinv_sql = "select max(inv_no) as max_id from inventory ;";
             PreparedStatement maxinv_pstatement = conn.prepareStatement(maxinv_sql);
             ResultSet rs_maxinv = maxinv_pstatement.executeQuery();
             while (rs_maxinv.next()) {
-                maxdatainv = rs_maxinv.getInt("counter");
+                maxdatainv = rs_maxinv.getInt("max_id");
 
             }
         } catch (SQLException ex) {
@@ -4374,7 +4541,7 @@ public class FrmAdmin extends javax.swing.JFrame {
     private void comboPeriod_PL() {
         try {
             if (conn != null) {
-                String sql = "select distinct(period) from gl_master;";
+                String sql = "select distinct(period) from tb_master;";
                 PreparedStatement pstatement = conn.prepareStatement(sql);
                 DefaultComboBoxModel comboperiod_PL = new DefaultComboBoxModel();
                 ResultSet rs = pstatement.executeQuery();
@@ -4401,6 +4568,15 @@ public class FrmAdmin extends javax.swing.JFrame {
         tableModel3.setRowCount(0);
     }
 
+    private void removeTableData_BS() {
+        DefaultTableModel tableModel1 = (DefaultTableModel) tblAsset_BS.getModel();
+        DefaultTableModel tableModel2 = (DefaultTableModel) tblLiability_BS.getModel();
+        DefaultTableModel tableModel3 = (DefaultTableModel) tblCapital_BS.getModel();
+        tableModel1.setRowCount(0);
+        tableModel2.setRowCount(0);
+        tableModel3.setRowCount(0);
+    }
+
     private void refreshPLForm() {
         removeTableData_PL();
         txtTotalSalesRevenue_PL.setText("");
@@ -4422,7 +4598,7 @@ public class FrmAdmin extends javax.swing.JFrame {
                 DefaultTableModel model = (DefaultTableModel) tblSalesRevenue_PL.getModel();
                 while (rs.next()) {
                     Double balanceSR_PL = rs.getDouble("ending");
-                        balanceSR_PL=-balanceSR_PL;
+                    balanceSR_PL = -balanceSR_PL;
                     Object data[] = {
                         rs.getString("chart_name"),
                         balanceSR_PL,};
@@ -4433,7 +4609,7 @@ public class FrmAdmin extends javax.swing.JFrame {
             }
             rs.close();
             pstatementSR_PL.close();
-            generateTotalSales_PL();
+            generateTotal_PL_BS("Sales Revenue");
         } catch (SQLException ex) {
             Logger.getLogger(FrmAdmin.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -4441,27 +4617,135 @@ public class FrmAdmin extends javax.swing.JFrame {
     }
 
     private void loadOperExp_PL() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+
+            String sql = "SELECT chart_name,chart_type, ending FROM akuntansi.tb_master where chart_type=? and period=?;";
+            PreparedStatement pstatementOE_PL = conn.prepareStatement(sql);
+            pstatementOE_PL.setString(1, "Operational Expenditure");
+            pstatementOE_PL.setString(2, cboPeriod_PL.getSelectedItem().toString());
+            ResultSet rs = pstatementOE_PL.executeQuery();
+            if (rs.isBeforeFirst()) { // check is resultset not empty
+                DefaultTableModel model = (DefaultTableModel) tblOpExpend_PL.getModel();
+                while (rs.next()) {
+                    Double balanceOE_PL = rs.getDouble("ending");
+                    balanceOE_PL = -balanceOE_PL;
+                    Object data[] = {
+                        rs.getString("chart_name"),
+                        balanceOE_PL,};
+                    model.addRow(data);
+                }
+            } else {
+
+            }
+            rs.close();
+            pstatementOE_PL.close();
+            generateTotal_PL_BS("Operational Expenditure");
+        } catch (SQLException ex) {
+            Logger.getLogger(FrmAdmin.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
+    private Double beginning_inv, ending_inv, totalCOGS;
+    private Double totalbalanceCOGS, temp;
 
     private void loadCOGS_PL() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+        try {
+            String getSql = "SELECT sum(price*opening) as opening_balance, sum(value_end) as ending_balance FROM akuntansi.inventory where period=?;";
+            PreparedStatement pstatementINV_PL = conn.prepareStatement(getSql);
+            pstatementINV_PL.setString(1, cboPeriod_PL.getSelectedItem().toString());
+            ResultSet rs_inv_pl = pstatementINV_PL.executeQuery();
+            if (rs_inv_pl.isBeforeFirst()) { // check is resultset not empty
+                DefaultTableModel model = (DefaultTableModel) tblCOGS_PL.getModel();
+                while (rs_inv_pl.next()) {
+                    beginning_inv = rs_inv_pl.getDouble("opening_balance");
+                    ending_inv = rs_inv_pl.getDouble("ending_balance");
+                    Object data1[] = {"Beginning Inventory", beginning_inv};
+                    Object data2[] = {"Ending Inventory", ending_inv};
+                    model.addRow(data1);
+                    model.addRow(data2);
+                    totalCOGS=beginning_inv-ending_inv;
+                }
+            }
 
-    private void generateTotalSales_PL() {
+            String sql = "SELECT chart_name,chart_type, ending FROM akuntansi.tb_master where chart_type=? and period=?;";
+            PreparedStatement pstatementCOGS_PL = conn.prepareStatement(sql);
+            pstatementCOGS_PL.setString(1, "COGS");
+            pstatementCOGS_PL.setString(2, cboPeriod_PL.getSelectedItem().toString());
+            ResultSet rs = pstatementCOGS_PL.executeQuery();
+            if (rs.isBeforeFirst()) { // check is resultset not empty
+                DefaultTableModel model = (DefaultTableModel) tblCOGS_PL.getModel();
+                while (rs.next()) {
+                    Double balanceCOGS_PL = rs.getDouble("ending");
+                    Object data[] = {
+                        rs.getString("chart_name"),
+                        balanceCOGS_PL,};
+                    model.addRow(data);
+
+                }
+            } else {
+
+            }
+            rs.close();
+            pstatementCOGS_PL.close();
+            generateTotal_PL_BS("COGS");
+            txtTotalCOGS_PL.setText(String.valueOf(totalbalanceCOGS +totalCOGS));
+        } catch (SQLException ex) {
+            Logger.getLogger(FrmAdmin.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    private Double totalnet_capital;
+    private void generateTotal_PL_BS(String topic) {
         try {
             String sql = "SELECT sum(ending) as tSales FROM akuntansi.tb_master where chart_type=? and period=?;";
             PreparedStatement pstatement_tSales = conn.prepareStatement(sql);
-            pstatement_tSales.setString(1, "Sales Revenue");
+            pstatement_tSales.setString(1, topic);
             pstatement_tSales.setString(2, cboPeriod_PL.getSelectedItem().toString());
             ResultSet rs_tSales = pstatement_tSales.executeQuery();
             if (rs_tSales.isBeforeFirst()) { // check is resultset not empty
                 DefaultTableModel model = (DefaultTableModel) tblSalesRevenue_PL.getModel();
                 while (rs_tSales.next()) {
-                    Double totalSales_PL = rs_tSales.getDouble("tSales");
-                    totalSales_PL = -totalSales_PL;
-                    txtTotalSalesRevenue_PL.setText(String.valueOf(totalSales_PL));
-                    
+                    Double total_PL_BS = rs_tSales.getDouble("tSales");
+                    total_PL_BS = -total_PL_BS;
+                    if (topic.equals("Sales Revenue")) {
+                        if (total_PL_BS == -0.0) {
+                            total_PL_BS = 0.0;
+                        }
+                        txtTotalSalesRevenue_PL.setText(String.valueOf((long)(total_PL_BS+0)));
+                    } else if (topic.equals("Operational Expenditure")) {
+                        total_PL_BS=-total_PL_BS;
+                        if (total_PL_BS == -0.0) {
+                            total_PL_BS = 0.0;
+                        }
+                        txtTotalOperationalExpenditure_PL.setText(String.valueOf((long)(total_PL_BS+0)));
+
+                    } else if (topic.equals("COGS")) {
+                        total_PL_BS=-total_PL_BS;
+                        if (total_PL_BS == -0.0) {
+                            total_PL_BS = 0.0;
+                        }
+                        totalbalanceCOGS=total_PL_BS;
+                    } else if (topic.equals("Asset")) {
+                        
+                        if (total_PL_BS == -0.0) {
+                            total_PL_BS = 0.0;
+                        }
+                        if(total_PL_BS<0){
+                            total_PL_BS=-total_PL_BS;
+                        }
+                        txtTotalAsset_BS.setText(String.valueOf((long)(total_PL_BS+endinginv_bs)));
+                    } else if (topic.equals("Liability")) {
+                        if (total_PL_BS == -0.0) {
+                            total_PL_BS = 0.0;
+                        }
+                        txtTotalLiability_BS.setText(String.valueOf((long)(total_PL_BS+0)));
+                    } else if (topic.equals("Capital")) {
+                        if (total_PL_BS == -0.0) {
+                            total_PL_BS = 0.0;
+                           
+                        }
+                          totalnet_capital =total_PL_BS+netprofitloss;
+                        txtTotalCapital_BS.setText(String.valueOf((long)(totalnet_capital+0)));
+                    }
+
                 }
             } else {
 
@@ -4471,6 +4755,167 @@ public class FrmAdmin extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(FrmAdmin.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+private static Double netprofitloss;
+    private void generateTotalGrossnNet_PL() {
+        Double SR = Double.valueOf(txtTotalSalesRevenue_PL.getText().trim());
+        Double OE = Double.valueOf(txtTotalOperationalExpenditure_PL.getText().trim());
+        Double COGS = Double.valueOf(txtTotalCOGS_PL.getText().trim());
+
+        txtGrossProfitLoss_PL.setText(String.valueOf(SR - COGS));
+        netprofitloss=SR - COGS - OE;
+        txtNetProfitLoss_PL.setText(String.valueOf(netprofitloss));
+
+    }
+
+    private void comboinvperiodsorter() {
+        try {
+            if (conn != null) {
+                String sql = "select distinct(period) from gl_master;";
+                PreparedStatement pstatement = conn.prepareStatement(sql);
+                DefaultComboBoxModel comboperiod_INV = new DefaultComboBoxModel();
+                ResultSet rs = pstatement.executeQuery();
+                while (rs.next()) {
+                    String period_INV = rs.getString("period");
+                    comboperiod_INV.addElement(period_INV);
+
+                    cboINVPeriodSorter_INV.setModel(comboperiod_INV);
+
+                }
+            }
+        } catch (SQLException ex) {
+            System.out.println("Error:\n" + ex.getLocalizedMessage());
+        }
+    }
+    private int datainvcounter;
+
+    private void checkINV() {
+        try {
+            String sql = "select count(inv_id) as counter from inventory where period=?;";
+            PreparedStatement pstatement = conn.prepareStatement(sql);
+            pstatement.setString(1, cboINVPeriodSorter_INV.getSelectedItem().toString());
+            DefaultTableModel model = (DefaultTableModel) tblInventory_INV.getModel();
+            ResultSet rs = pstatement.executeQuery();
+            while (rs.next()) {
+                datainvcounter = rs.getInt("counter");
+
+            };
+
+        } catch (SQLException ex) {
+            System.out.println("Error:\n" + ex.getLocalizedMessage());
+
+        }
+    }
+
+    private void comboPeriod_BS() {
+
+        try {
+            if (conn != null) {
+                String sql = "select distinct(period) from tb_master;";
+                PreparedStatement pstatement = conn.prepareStatement(sql);
+                DefaultComboBoxModel comboperiod_BS = new DefaultComboBoxModel();
+                ResultSet rs = pstatement.executeQuery();
+                while (rs.next()) {
+                    String period_BS = rs.getString("period");
+                    comboperiod_BS.addElement(period_BS);
+                }
+                cboPeriod_BS.setModel(comboperiod_BS);
+
+            }
+
+        } catch (SQLException ex) {
+            System.out.println("Error:\n" + ex.getLocalizedMessage());
+        }
+    }
+
+    private void loadAsset_BS() {
+        try {
+
+            String sql = "SELECT chart_name,chart_type, ending FROM akuntansi.tb_master where chart_type=? and period=?;";
+            PreparedStatement pstatementAS_BS = conn.prepareStatement(sql);
+            pstatementAS_BS.setString(1, "Asset");
+            pstatementAS_BS.setString(2, cboPeriod_BS.getSelectedItem().toString());
+            ResultSet rs = pstatementAS_BS.executeQuery();
+            if (rs.isBeforeFirst()) { // check is resultset not empty
+                DefaultTableModel model = (DefaultTableModel) tblAsset_BS.getModel();
+                while (rs.next()) {
+                    Double balanceAS_BS = rs.getDouble("ending");
+                    Object data[] = {
+                        rs.getString("chart_name"),
+                        balanceAS_BS,};
+                    model.addRow(data);
+                }
+            } else {
+
+            }
+            rs.close();
+            pstatementAS_BS.close();
+            generateTotal_PL_BS("Asset");
+        } catch (SQLException ex) {
+            Logger.getLogger(FrmAdmin.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    private void loadCapital_BS() {
+         try {
+
+            String sql = "SELECT chart_name,chart_type, ending FROM akuntansi.tb_master where chart_type=? and period=?;";
+            PreparedStatement pstatementAS_BS = conn.prepareStatement(sql);
+            pstatementAS_BS.setString(1, "Capital");
+            pstatementAS_BS.setString(2, cboPeriod_BS.getSelectedItem().toString());
+            ResultSet rs = pstatementAS_BS.executeQuery();
+            if (rs.isBeforeFirst()) { // check is resultset not empty
+                DefaultTableModel model = (DefaultTableModel) tblCapital_BS.getModel();
+                while (rs.next()) {
+                    Double balanceAS_BS = rs.getDouble("ending");
+                    balanceAS_BS = -balanceAS_BS;
+                    Object data[] = {
+                        rs.getString("chart_name"),
+                        balanceAS_BS,};
+                    model.addRow(data);
+                }
+            } else {
+
+            }
+            rs.close();
+            pstatementAS_BS.close();
+            generateTotal_PL_BS("Capital");
+        } catch (SQLException ex) {
+            Logger.getLogger(FrmAdmin.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    private void loadLiability_BS() {
+          try {
+
+            String sql = "SELECT chart_name,chart_type, ending FROM akuntansi.tb_master where chart_type=? and period=?;";
+            PreparedStatement pstatementAS_BS = conn.prepareStatement(sql);
+            pstatementAS_BS.setString(1, "Liability");
+            pstatementAS_BS.setString(2, cboPeriod_BS.getSelectedItem().toString());
+            ResultSet rs = pstatementAS_BS.executeQuery();
+            if (rs.isBeforeFirst()) { // check is resultset not empty
+                DefaultTableModel model = (DefaultTableModel) tblLiability_BS.getModel();
+                while (rs.next()) {
+                    Double balanceAS_BS = rs.getDouble("ending");
+                    balanceAS_BS = -balanceAS_BS;
+                    Object data[] = {
+                        rs.getString("chart_name"),
+                        balanceAS_BS,};
+                    model.addRow(data);
+                }
+            } else {
+
+            }
+            rs.close();
+            pstatementAS_BS.close();
+            generateTotal_PL_BS("Liability");
+        } catch (SQLException ex) {
+            Logger.getLogger(FrmAdmin.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    private void generateTotalLiabilitynCapital_PL() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

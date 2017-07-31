@@ -189,7 +189,7 @@ public final class ProductSearch extends javax.swing.JDialog {
         );
 
         jPanel3.setBackground(new java.awt.Color(32, 47, 78));
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Register Product", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(255, 255, 255))); // NOI18N
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Register Product", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 13), new java.awt.Color(255, 255, 255))); // NOI18N
 
         jLabel64.setFont(new java.awt.Font("Orator Std", 0, 27)); // NOI18N
         jLabel64.setForeground(new java.awt.Color(255, 255, 255));
@@ -449,7 +449,7 @@ public final class ProductSearch extends javax.swing.JDialog {
 
     private void executeAddProduct() {
         try {
-            String countpidSql = "select count(pno)as counter,max(pno) as max_pno from productlist;";
+            String countpidSql = "select count(pid)as counter,max(pno) as max_pno from productlist;";
             PreparedStatement pstatement_countpid = conn.prepareStatement(countpidSql);
             ResultSet rs = pstatement_countpid.executeQuery();
             if (rs.isBeforeFirst()) { // check is resultset not empty
@@ -460,15 +460,14 @@ public final class ProductSearch extends javax.swing.JDialog {
                 }
             }
 
-            rs.close();
-            pstatement_countpid.close();
 
             if (counterpid == 0) {
                 pno = 1;
-                pid = "P-00" + pno;
+                pid = "P-00" + String.valueOf(pno);
             } else {
-                pid = "P-00" + (pno + 1);
-
+                pno=pno+1;
+                pid = "P-00" + String.valueOf(pno);
+                System.out.println(pno);
             }
             txtPID.setText(pid);
 
@@ -484,7 +483,7 @@ public final class ProductSearch extends javax.swing.JDialog {
             String insertProductSql = "insert into akuntansi.productlist values (?,?,?)";
             PreparedStatement pstatement_insertproduct = conn.prepareStatement(insertProductSql);
             pstatement_insertproduct.setString(1, txtPID.getText());
-            pstatement_insertproduct.setInt(2, pno + 1);
+            pstatement_insertproduct.setInt(2,( pno));
             pstatement_insertproduct.setString(3, txtPName_INV.getText());
             pstatement_insertproduct.executeUpdate();
 

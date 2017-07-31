@@ -29,15 +29,11 @@ public class FrmMain extends javax.swing.JFrame {
     private Connection conn;
 
     public FrmMain() {
-        try {
-            initComponents();
-            databaseConnection();
-            autoLogin();
-            setLocationRelativeTo(null);
-            txtID.requestFocusInWindow();
-        } catch (SQLException ex) {
-            Logger.getLogger(FrmMain.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        initComponents();
+        databaseConnection();
+        setLocationRelativeTo(null);
+        txtID.requestFocusInWindow();
+        autoLogin();
     }
 
     private void databaseConnection() {
@@ -342,7 +338,7 @@ public class FrmMain extends javax.swing.JFrame {
     }
     private int counter_id;
 
-    private void autoLogin() throws SQLException {
+    private void autoLogin() {
         try {
         String checksql = "SELECT count(uid) as counter FROM akuntansi.autologin";
         PreparedStatement pstatement1 = conn.prepareStatement(checksql);
@@ -355,8 +351,6 @@ public class FrmMain extends javax.swing.JFrame {
         } else {
 
         }
-        rs1.close();
-        pstatement1.close();
 
         if (counter_id == 0) {
             txtID.setText("");
@@ -380,9 +374,11 @@ public class FrmMain extends javax.swing.JFrame {
 
             
         }
-        } catch (SQLException ex) {
+        }catch (NullPointerException | SQLException ex) {
                 System.out.println("Error:\n" + ex.getLocalizedMessage());
-            }
+            
+        }
+        
 
     }
 }
