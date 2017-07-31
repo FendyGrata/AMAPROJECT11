@@ -224,9 +224,11 @@ public class FrmAdmin extends javax.swing.JFrame {
         tblOpExpend_PL = new javax.swing.JTable();
         jLabel12 = new javax.swing.JLabel();
         txtTotalOperationalExpenditure_PL = new javax.swing.JTextField();
+        lblRefresh_GL2 = new javax.swing.JLabel();
         jPanel18 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         txtNetProfitLoss_PL = new javax.swing.JTextField();
+        lblRefresh_PL = new javax.swing.JLabel();
         jPanel13 = new javax.swing.JPanel();
         jPanel17 = new javax.swing.JPanel();
         jPanel19 = new javax.swing.JPanel();
@@ -624,6 +626,11 @@ public class FrmAdmin extends javax.swing.JFrame {
 
         cboChart_GL.setFont(new java.awt.Font("Lucida Console", 0, 18)); // NOI18N
         cboChart_GL.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Chart Name" }));
+        cboChart_GL.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cboChart_GLMouseClicked(evt);
+            }
+        });
         cboChart_GL.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cboChart_GLActionPerformed(evt);
@@ -1758,6 +1765,8 @@ public class FrmAdmin extends javax.swing.JFrame {
 
         txtTotalOperationalExpenditure_PL.setEditable(false);
 
+        lblRefresh_GL2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/arrow_refresh.png"))); // NOI18N
+
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
         jPanel10Layout.setHorizontalGroup(
@@ -1774,6 +1783,11 @@ public class FrmAdmin extends javax.swing.JFrame {
             .addGroup(jPanel10Layout.createSequentialGroup()
                 .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 431, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel10Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(lblRefresh_GL2)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1786,6 +1800,11 @@ public class FrmAdmin extends javax.swing.JFrame {
                     .addComponent(txtTotalOperationalExpenditure_PL, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
+            .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel10Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(lblRefresh_GL2)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         jLabel14.setFont(new java.awt.Font("Adobe Caslon Pro Bold", 1, 36)); // NOI18N
@@ -1816,6 +1835,13 @@ public class FrmAdmin extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        lblRefresh_PL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/arrow_refresh.png"))); // NOI18N
+        lblRefresh_PL.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblRefresh_PLMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
         jPanel16.setLayout(jPanel16Layout);
         jPanel16Layout.setHorizontalGroup(
@@ -1823,14 +1849,6 @@ public class FrmAdmin extends javax.swing.JFrame {
             .addGroup(jPanel16Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel16Layout.createSequentialGroup()
-                        .addComponent(jLabel60, javax.swing.GroupLayout.PREFERRED_SIZE, 456, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(129, 129, 129)
-                        .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(cboPeriod_PL, 0, 229, Short.MAX_VALUE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnSearch_PL, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel16Layout.createSequentialGroup()
                         .addGap(10, 10, 10)
                         .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -1840,8 +1858,19 @@ public class FrmAdmin extends javax.swing.JFrame {
                         .addGap(10, 10, 10)
                         .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jPanel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(60, Short.MAX_VALUE))
+                            .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap(60, Short.MAX_VALUE))
+                    .addGroup(jPanel16Layout.createSequentialGroup()
+                        .addComponent(jLabel60, javax.swing.GroupLayout.PREFERRED_SIZE, 456, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(129, 129, 129)
+                        .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(cboPeriod_PL, 0, 229, Short.MAX_VALUE)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnSearch_PL, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lblRefresh_PL)
+                        .addContainerGap())))
         );
         jPanel16Layout.setVerticalGroup(
             jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1853,19 +1882,19 @@ public class FrmAdmin extends javax.swing.JFrame {
                         .addGroup(jPanel16Layout.createSequentialGroup()
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(cboPeriod_PL, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(cboPeriod_PL, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(lblRefresh_PL, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel16Layout.createSequentialGroup()
-                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
-                        .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel16Layout.createSequentialGroup()
-                        .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jPanel18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
+                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel16Layout.createSequentialGroup()
+                .addGap(103, 103, 103)
+                .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
@@ -2336,15 +2365,15 @@ public class FrmAdmin extends javax.swing.JFrame {
                 datestatus = 0;
 
             }
-            if (((!txtCredit_Journal.getText().trim().isEmpty()) && (!txtDebit_Journal.getText().trim().isEmpty())) || txtChartName_Journal.getText().trim().isEmpty() || txtChartNumber_Journal.getText().trim().isEmpty() || txtDesc_Journal.getText().trim().isEmpty() || (txtCredit_Journal.getText().trim().isEmpty() && txtDebit_Journal.getText().trim().isEmpty()) || datestatus != 1) {
+            if (txtChartName_Journal.getText().trim().isEmpty() || txtChartNumber_Journal.getText().trim().isEmpty() || txtDesc_Journal.getText().trim().isEmpty() || (txtCredit_Journal.getText().trim().isEmpty() && txtDebit_Journal.getText().trim().isEmpty()) || datestatus != 1) {
                 Sutil.msg(this, "Some field is still empty or mistaken.");
 
             } else {
 
-                if (txtDebit_Journal.getText().trim().isEmpty()) {
+                if (txtDebit_Journal.getText().trim().equals("0.0")) {
                     debit_journal = 0.0;
                     credit_journal = Double.valueOf(txtCredit_Journal.getText());
-                } else if (txtCredit_Journal.getText().trim().isEmpty()) {
+                } else if (txtCredit_Journal.getText().trim().equals("0.0")) {
                     credit_journal = 0.0;
                     debit_journal = Double.valueOf(txtDebit_Journal.getText());
                 }
@@ -2442,7 +2471,8 @@ public class FrmAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_menuLogOutActionPerformed
 
     private void cboPeriod_GLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboPeriod_GLActionPerformed
-        // TODO add your handling code here:
+        comboPeriod_GL();
+        comboChart_GL();
     }//GEN-LAST:event_cboPeriod_GLActionPerformed
 
     private void txtDebit_JournalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDebit_JournalActionPerformed
@@ -2474,7 +2504,7 @@ public class FrmAdmin extends javax.swing.JFrame {
         } else {
 
             if ((!txtDebit_Journal.getText().isEmpty()) && Double.valueOf(txtDebit_Journal.getText().trim()) > 0) {
-
+                txtCredit_Journal.setText("0.0");
                 txtCredit_Journal.setEnabled(false);
                 lblError.setVisible(false);
                 txtDebit_Journal.setForeground(black);
@@ -2496,6 +2526,7 @@ public class FrmAdmin extends javax.swing.JFrame {
 
             if ((!txtCredit_Journal.getText().isEmpty()) && Double.valueOf(txtCredit_Journal.getText().trim()) > 0) {
                 txtDebit_Journal.setEnabled(false);
+                txtDebit_Journal.setText("0.0");
 
                 lblError.setVisible(false);
                 txtCredit_Journal.setForeground(black);
@@ -2829,6 +2860,7 @@ public class FrmAdmin extends javax.swing.JFrame {
         if (cboPeriod_PL.getSelectedItem().equals("Period..")) {
             Sutil.msg(this, "Please refresh combobox.");
         } else {
+            btnSearch_PL.setEnabled(false);
             removeTableData_PL();
             loadSalesRevenue_PL();
             loadOperExp_PL();
@@ -2837,6 +2869,15 @@ public class FrmAdmin extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_btnSearch_PLActionPerformed
+
+    private void cboChart_GLMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cboChart_GLMouseClicked
+        comboPeriod_GL();
+        comboChart_GL();
+    }//GEN-LAST:event_cboChart_GLMouseClicked
+
+    private void lblRefresh_PLMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblRefresh_PLMouseClicked
+      btnSearch_PL.setEnabled(true);
+    }//GEN-LAST:event_lblRefresh_PLMouseClicked
 
     // METHODS
     private void setElements() {
@@ -3475,6 +3516,8 @@ public class FrmAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel lblRefreshProduct_GL;
     private javax.swing.JLabel lblRefreshTransactionProduct_GL;
     private javax.swing.JLabel lblRefresh_GL;
+    private javax.swing.JLabel lblRefresh_GL2;
+    private javax.swing.JLabel lblRefresh_PL;
     private javax.swing.JMenuItem menuLogOut;
     private javax.swing.JMenuItem menuRefresh;
     private javax.swing.JSpinner spiQty_INV;
@@ -4211,7 +4254,7 @@ public class FrmAdmin extends javax.swing.JFrame {
 
             setPrevBalance_TB();
 
-            String sql = "select cl.chart_no, gl.id_gl, gl.period, gl.chart_name, gl.prev_balance, gl.debit, gl.credit from gl_master gl inner join chartlist cl on gl.chart_name = cl.chart_name where gl.period=?;";
+            String sql = "select cl.chart_no, cl.chart_type, gl.id_gl, gl.period, gl.chart_name, gl.prev_balance, gl.debit, gl.credit from gl_master gl inner join chartlist cl on gl.chart_name = cl.chart_name where gl.period=?;";
             PreparedStatement pstatement = conn.prepareStatement(sql);
             DefaultTableModel model2 = (DefaultTableModel) tblTB.getModel();
             pstatement.setString(1, cboPeriod_TB.getSelectedItem().toString());
@@ -4231,14 +4274,15 @@ public class FrmAdmin extends javax.swing.JFrame {
                 };
                 model2.addRow(data);
                 //SAVE TO TB DATABASE
-                String saveSql = "insert into akuntansi.tb_master values (?,?,?,?,?) on duplicate key update ending=?";
+                String saveSql = "insert into akuntansi.tb_master values (?,?,?,?,?,?) on duplicate key update ending=?";
                 PreparedStatement savepstatement = conn.prepareStatement(saveSql);
                 savepstatement.setString(1, rs.getString("gl.id_gl"));
                 savepstatement.setString(2, rs.getString("cl.chart_no"));
                 savepstatement.setString(3, rs.getString("gl.chart_name"));
-                savepstatement.setString(4, rs.getString("gl.period"));
-                savepstatement.setDouble(5, open_TB + debit_TB - credit_TB);
+                savepstatement.setString(4, rs.getString("cl.chart_type"));
+                savepstatement.setString(5, rs.getString("gl.period"));
                 savepstatement.setDouble(6, open_TB + debit_TB - credit_TB);
+                savepstatement.setDouble(7, open_TB + debit_TB - credit_TB);
                 savepstatement.executeUpdate();
 
             };
@@ -4369,16 +4413,19 @@ public class FrmAdmin extends javax.swing.JFrame {
     private void loadSalesRevenue_PL() {
         try {
 
-            String sql = "SELECT tb.chart_name,tb.ending, cl.chart_type FROM akuntansi.tb_master tb inner join akuntansi.chartlist cl on tb.chart_name=cl.chart_name where cl.chart_type=?;";
+            String sql = "SELECT chart_name,chart_type, ending FROM akuntansi.tb_master where chart_type=? and period=?;";
             PreparedStatement pstatementSR_PL = conn.prepareStatement(sql);
             pstatementSR_PL.setString(1, "Sales Revenue");
+            pstatementSR_PL.setString(2, cboPeriod_PL.getSelectedItem().toString());
             ResultSet rs = pstatementSR_PL.executeQuery();
             if (rs.isBeforeFirst()) { // check is resultset not empty
                 DefaultTableModel model = (DefaultTableModel) tblSalesRevenue_PL.getModel();
                 while (rs.next()) {
+                    Double balanceSR_PL = rs.getDouble("ending");
+                        balanceSR_PL=-balanceSR_PL;
                     Object data[] = {
                         rs.getString("chart_name"),
-                        rs.getDouble("ending"),};
+                        balanceSR_PL,};
                     model.addRow(data);
                 }
             } else {
@@ -4386,9 +4433,11 @@ public class FrmAdmin extends javax.swing.JFrame {
             }
             rs.close();
             pstatementSR_PL.close();
+            generateTotalSales_PL();
         } catch (SQLException ex) {
             Logger.getLogger(FrmAdmin.class.getName()).log(Level.SEVERE, null, ex);
         }
+
     }
 
     private void loadOperExp_PL() {
@@ -4397,6 +4446,31 @@ public class FrmAdmin extends javax.swing.JFrame {
 
     private void loadCOGS_PL() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void generateTotalSales_PL() {
+        try {
+            String sql = "SELECT sum(ending) as tSales FROM akuntansi.tb_master where chart_type=? and period=?;";
+            PreparedStatement pstatement_tSales = conn.prepareStatement(sql);
+            pstatement_tSales.setString(1, "Sales Revenue");
+            pstatement_tSales.setString(2, cboPeriod_PL.getSelectedItem().toString());
+            ResultSet rs_tSales = pstatement_tSales.executeQuery();
+            if (rs_tSales.isBeforeFirst()) { // check is resultset not empty
+                DefaultTableModel model = (DefaultTableModel) tblSalesRevenue_PL.getModel();
+                while (rs_tSales.next()) {
+                    Double totalSales_PL = rs_tSales.getDouble("tSales");
+                    totalSales_PL = -totalSales_PL;
+                    txtTotalSalesRevenue_PL.setText(String.valueOf(totalSales_PL));
+                    
+                }
+            } else {
+
+            }
+            rs_tSales.close();
+            pstatement_tSales.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(FrmAdmin.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
 }
