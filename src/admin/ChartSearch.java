@@ -41,6 +41,7 @@ public final class ChartSearch extends javax.swing.JDialog {
         this.conn = conn;
         this.Direction = Direction;
         initComponents();
+        txtSearch.requestFocusInWindow();
         loadDatabase();
         comboChartType();
         tableSelectionListener();
