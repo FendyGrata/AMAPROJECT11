@@ -28,6 +28,7 @@ import util.Sutil;
 import java.util.Date;
 import java.util.Objects;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.DefaultListModel;
 import main.FrmAbout;
 import main.FrmMain;
 
@@ -99,6 +100,9 @@ public class FrmAdmin extends javax.swing.JFrame {
         txtStatus = new javax.swing.JTextField();
         lblError = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel51 = new javax.swing.JLabel();
+        jScrollPane13 = new javax.swing.JScrollPane();
+        lstSuggestions_Journal = new javax.swing.JList<>();
         jPanel22 = new javax.swing.JPanel();
         jScrollPane10 = new javax.swing.JScrollPane();
         tblJournalMaker = new javax.swing.JTable();
@@ -304,7 +308,7 @@ public class FrmAdmin extends javax.swing.JFrame {
         jLabel34.setFont(new java.awt.Font("Orator Std", 0, 18)); // NOI18N
         jLabel34.setForeground(new java.awt.Color(255, 255, 255));
         jLabel34.setText("Chart NUMBER");
-        jPanel20.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 140, 20));
+        jPanel20.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 140, 20));
 
         jLabel35.setFont(new java.awt.Font("Orator Std", 0, 18)); // NOI18N
         jLabel35.setForeground(new java.awt.Color(255, 255, 255));
@@ -312,7 +316,7 @@ public class FrmAdmin extends javax.swing.JFrame {
         jPanel20.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 120, -1, 30));
 
         txtChartName_Journal.setEditable(false);
-        jPanel20.add(txtChartName_Journal, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 240, 210, 30));
+        jPanel20.add(txtChartName_Journal, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 190, 210, 30));
 
         jLabel39.setFont(new java.awt.Font("Orator Std", 0, 18)); // NOI18N
         jLabel39.setForeground(new java.awt.Color(255, 255, 255));
@@ -324,7 +328,7 @@ public class FrmAdmin extends javax.swing.JFrame {
 
         txtChartNumber_Journal.setEditable(false);
         txtChartNumber_Journal.setFont(new java.awt.Font("Orator Std", 0, 18)); // NOI18N
-        jPanel20.add(txtChartNumber_Journal, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 170, 150, 40));
+        jPanel20.add(txtChartNumber_Journal, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 140, 150, 40));
 
         txtDesc_Journal.setColumns(20);
         txtDesc_Journal.setRows(5);
@@ -335,7 +339,7 @@ public class FrmAdmin extends javax.swing.JFrame {
         });
         jScrollPane9.setViewportView(txtDesc_Journal);
 
-        jPanel20.add(jScrollPane9, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 170, 270, 130));
+        jPanel20.add(jScrollPane9, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 170, 270, 170));
 
         btnView_Journal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/View Journal.png"))); // NOI18N
         btnView_Journal.setText("jButton6");
@@ -344,7 +348,7 @@ public class FrmAdmin extends javax.swing.JFrame {
                 btnView_JournalActionPerformed(evt);
             }
         });
-        jPanel20.add(btnView_Journal, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 290, 200, 80));
+        jPanel20.add(btnView_Journal, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 320, 200, 80));
 
         btnAddNew_Journal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/AMA - ADD NEW.png"))); // NOI18N
         btnAddNew_Journal.addActionListener(new java.awt.event.ActionListener() {
@@ -360,7 +364,7 @@ public class FrmAdmin extends javax.swing.JFrame {
                 btnSaveData_JournalActionPerformed(evt);
             }
         });
-        jPanel20.add(btnSaveData_Journal, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 200, 200, 80));
+        jPanel20.add(btnSaveData_Journal, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 220, 200, 80));
 
         btnUpdate_Journal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/AMA - UPDATE 1.png"))); // NOI18N
         btnUpdate_Journal.addActionListener(new java.awt.event.ActionListener() {
@@ -377,7 +381,7 @@ public class FrmAdmin extends javax.swing.JFrame {
                 btnSearch_JournalActionPerformed(evt);
             }
         });
-        jPanel20.add(btnSearch_Journal, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 170, 50, 40));
+        jPanel20.add(btnSearch_Journal, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 140, 50, 40));
 
         dateChooser.setDateFormatString("yyyy-MM-dd");
         dateChooser.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -391,7 +395,7 @@ public class FrmAdmin extends javax.swing.JFrame {
         txtJID_Journal.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         txtJID_Journal.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtJID_Journal.setText("JID");
-        jPanel20.add(txtJID_Journal, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 120, 210, 40));
+        jPanel20.add(txtJID_Journal, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 90, 210, 40));
 
         btnDelete_Journal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/delete-button.gif"))); // NOI18N
         btnDelete_Journal.setContentAreaFilled(false);
@@ -400,7 +404,7 @@ public class FrmAdmin extends javax.swing.JFrame {
                 btnDelete_JournalActionPerformed(evt);
             }
         });
-        jPanel20.add(btnDelete_Journal, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 200, 210, 170));
+        jPanel20.add(btnDelete_Journal, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 200, 210, 200));
 
         jPanel1.setBackground(new java.awt.Color(153, 153, 255));
 
@@ -472,11 +476,11 @@ public class FrmAdmin extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel20.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, 770, 50));
+        jPanel20.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, 770, 50));
 
         jLabel47.setFont(new java.awt.Font("Orator Std", 0, 18)); // NOI18N
         jLabel47.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel47.setText("Chart Name");
+        jLabel47.setText("SUGGESTION");
         jPanel20.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, -1, 30));
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -515,6 +519,15 @@ public class FrmAdmin extends javax.swing.JFrame {
             }
         });
         jPanel20.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1250, 20, -1, -1));
+
+        jLabel51.setFont(new java.awt.Font("Orator Std", 0, 18)); // NOI18N
+        jLabel51.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel51.setText("Chart Name");
+        jPanel20.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, -1, 30));
+
+        jScrollPane13.setViewportView(lstSuggestions_Journal);
+
+        jPanel20.add(jScrollPane13, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 230, 210, 110));
 
         jPanel22.setBackground(new java.awt.Color(32, 47, 78));
         jPanel22.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -564,29 +577,28 @@ public class FrmAdmin extends javax.swing.JFrame {
                 .addGap(26, 26, 26)
                 .addComponent(jScrollPane10)
                 .addContainerGap())
-            .addGroup(jPanel22Layout.createSequentialGroup()
-                .addGap(635, 635, 635)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel22Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel50)
-                .addGap(18, 18, 18)
-                .addComponent(txtTotalDebit_Journal, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel48)
+                .addComponent(txtTotalDebit_Journal, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel48)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtTotalCredit_Journal, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(178, 178, 178))
         );
         jPanel22Layout.setVerticalGroup(
             jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel22Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtTotalDebit_Journal, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel50, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtTotalDebit_Journal, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel48, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtTotalCredit_Journal, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(25, Short.MAX_VALUE))
+                    .addComponent(txtTotalCredit_Journal, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
@@ -602,9 +614,10 @@ public class FrmAdmin extends javax.swing.JFrame {
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addComponent(jPanel20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20)
-                .addComponent(jPanel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel20, javax.swing.GroupLayout.PREFERRED_SIZE, 421, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(42, Short.MAX_VALUE))
         );
 
         tab.addTab("Journal", jPanel7);
@@ -757,12 +770,8 @@ public class FrmAdmin extends javax.swing.JFrame {
                                 .addComponent(txtTCredit_GL, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(61, 61, 61)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addComponent(txtBalance_GL, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtBalance_GL, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(458, 458, 458)
                         .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -2438,6 +2447,9 @@ public class FrmAdmin extends javax.swing.JFrame {
     private Double credit_journal;
     private int datestatus = 0;
 
+    private String chart_name;
+    
+    
     private void btnAddNew_JournalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddNew_JournalActionPerformed
 
         try {
@@ -2473,6 +2485,7 @@ public class FrmAdmin extends javax.swing.JFrame {
                 removeTableData();
                 loadJournal_Temporary();
                 executeNew();
+                loadSuggestions();
                 txtChartNumber_Journal.requestFocusInWindow();// pas add new selesai, lgsg fokus ke txtfield chart number
             }
         } catch (NullPointerException ex) {
@@ -3119,13 +3132,13 @@ public class FrmAdmin extends javax.swing.JFrame {
                 + "VALUES(?,?,?,?,?,?,?,?);";
         PreparedStatement pstatement = conn.prepareStatement(saveSql);
         String chartno = txtChartNumber_Journal.getText();
-        String chartname = txtChartName_Journal.getText();
+        chart_name = txtChartName_Journal.getText();
         String desc = txtDesc_Journal.getText();
         pstatement.setDate(1, (convertUtilDateToSql(dateChooser.getDate())));
         pstatement.setString(2, txtJID_Journal.getText());
         pstatement.setInt(3, jno + 1);
         pstatement.setString(4, chartno);
-        pstatement.setString(5, chartname);
+        pstatement.setString(5, chart_name);
         pstatement.setDouble(6, debit_journal);
         pstatement.setDouble(7, credit_journal);
         pstatement.setString(8, desc);
@@ -3604,6 +3617,7 @@ public class FrmAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel50;
+    private javax.swing.JLabel jLabel51;
     private javax.swing.JLabel jLabel53;
     private javax.swing.JLabel jLabel54;
     private javax.swing.JLabel jLabel56;
@@ -3666,6 +3680,7 @@ public class FrmAdmin extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane11;
     private javax.swing.JScrollPane jScrollPane12;
+    private javax.swing.JScrollPane jScrollPane13;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
@@ -3683,6 +3698,7 @@ public class FrmAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel lblRefresh_GL;
     private javax.swing.JLabel lblRefresh_PL;
     private javax.swing.JLabel lblRefresh_PL1;
+    private javax.swing.JList<String> lstSuggestions_Journal;
     private javax.swing.JMenuItem menuLogOut;
     private javax.swing.JMenuItem menuRefresh;
     private javax.swing.JSpinner spiQty_INV;
@@ -4916,6 +4932,36 @@ private static Double netprofitloss;
 
     private void generateTotalLiabilitynCapital_PL() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void loadSuggestions() {
+        try {
+
+            String sql = "SELECT chart_suggested FROM akuntansi.suggestions where chart_name=?;";
+            PreparedStatement pstatementAS_BS = conn.prepareStatement(sql);
+            DefaultListModel listSuggest =new DefaultListModel();
+            pstatementAS_BS.setString(1, chart_name);
+            ResultSet rs = pstatementAS_BS.executeQuery();
+            if (rs.isBeforeFirst()) { // check is resultset not empty
+                while (rs.next()) {
+                    
+                    String suggested_chart= rs.getString("chart_suggested");
+                    listSuggest.addElement(suggested_chart);
+              
+                }
+                  
+               lstSuggestions_Journal.setModel(listSuggest);
+            } else {
+
+            }
+            rs.close();
+            pstatementAS_BS.close();
+            generateTotal_PL_BS("Liability");
+        } catch (SQLException ex) {
+            Logger.getLogger(FrmAdmin.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
     }
 
 }
