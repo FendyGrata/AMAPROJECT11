@@ -476,7 +476,7 @@ public final class ChartSearch extends javax.swing.JDialog {
                         loadDatabase();
                         txtChartName.setText("");
                         txtChartNo.setText("");
-                        Sutil.msg(this, "Chart deleted.");
+//                        Sutil.msg(this, "Chart deleted.");
 
                     } else if (changeable == false) {
                         Sutil.msg(this, "You can't delete basic chart!");
