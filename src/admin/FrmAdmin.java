@@ -698,6 +698,11 @@ public class FrmAdmin extends javax.swing.JFrame {
 
         cboPeriod_GL.setFont(new java.awt.Font("Lucida Console", 0, 18)); // NOI18N
         cboPeriod_GL.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Period" }));
+        cboPeriod_GL.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cboPeriod_GLMouseClicked(evt);
+            }
+        });
         cboPeriod_GL.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cboPeriod_GLActionPerformed(evt);
@@ -2566,8 +2571,7 @@ public class FrmAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_menuLogOutActionPerformed
 
     private void cboPeriod_GLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboPeriod_GLActionPerformed
-        comboPeriod_GL();
-        comboChart_GL();
+       
     }//GEN-LAST:event_cboPeriod_GLActionPerformed
 
     private void txtDebit_JournalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDebit_JournalActionPerformed
@@ -3046,6 +3050,11 @@ public class FrmAdmin extends javax.swing.JFrame {
         removeTableData_BS();
         btnSearch_BS.setEnabled(true);
     }//GEN-LAST:event_lblRefresh_PL1MouseClicked
+
+    private void cboPeriod_GLMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cboPeriod_GLMouseClicked
+        comboPeriod_GL();
+        comboChart_GL();
+    }//GEN-LAST:event_cboPeriod_GLMouseClicked
 
     // METHODS
     private void setElements() {
@@ -4635,7 +4644,6 @@ public class FrmAdmin extends javax.swing.JFrame {
                 DefaultTableModel model = (DefaultTableModel) tblOpExpend_PL.getModel();
                 while (rs.next()) {
                     Double balanceOE_PL = rs.getDouble("ending");
-                    balanceOE_PL = -balanceOE_PL;
                     Object data[] = {
                         rs.getString("chart_name"),
                         balanceOE_PL,};
