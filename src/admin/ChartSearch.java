@@ -82,11 +82,10 @@ public final class ChartSearch extends javax.swing.JDialog {
                 DefaultTableModel model = (DefaultTableModel) tblChart.getModel();
                 while (rs.next()) {
                     Object data[] = {
-                    rs.getString("chart_no"),
-                    rs.getString("chart_name"),
-                    rs.getString("chart_type"),
-                    };
-                model.addRow(data);
+                        rs.getString("chart_no"),
+                        rs.getString("chart_name"),
+                        rs.getString("chart_type"),};
+                    model.addRow(data);
                 }
             } else {
 
@@ -467,32 +466,34 @@ public final class ChartSearch extends javax.swing.JDialog {
             if (rs.isBeforeFirst()) { // check is resultset not empty
                 while (rs.next()) {
                     changeable = rs.getBoolean("changeable");
-
+                   
                 }
+                System.out.println(changeable);
+                 if (changeable == true) {
+                        executeDelete();
+
+                        removeTableData();
+                        loadDatabase();
+                        txtChartName.setText("");
+                        txtChartNo.setText("");
+                        Sutil.msg(this, "Chart deleted.");
+
+                    } else if (changeable == false) {
+                        Sutil.msg(this, "You can't delete basic chart!");
+
+                        txtChartName.setText("");
+                        txtChartNo.setText("");
+                        removeTableData();
+                        loadDatabase();
+                    }
             } else {
-            }
-
-            if (changeable == true) {
-                executeDelete();
-                removeTableData();
-                loadDatabase();
-                txtChartName.setText("");
-                txtChartNo.setText("");
-
-            } else {
-                Sutil.msg(this, "You can't delete basic chart!");
-
-                txtChartName.setText("");
-                txtChartNo.setText("");
-                removeTableData();
-                loadDatabase();
             }
 
         } catch (SQLException ex) {
             Logger.getLogger(ChartSearch.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-          Sutil.msg(this, "Chart deleted.");
+
+
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     private void btnOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOkActionPerformed
@@ -601,7 +602,6 @@ public final class ChartSearch extends javax.swing.JDialog {
     private void executeDelete() throws SQLException {
         if (Sutil.msq(this, "Are you sure?") == 0) {
 
-
             DefaultTableModel tableModel = (DefaultTableModel) tblChart.getModel();
             tableModel.setRowCount(0);
             String deleteSql = "DELETE FROM akuntansi.chartlist where chart_no = ?";
@@ -629,7 +629,7 @@ public final class ChartSearch extends javax.swing.JDialog {
                         rs.getInt("chart_no"),
                         rs.getString("chart_name"),
                         rs.getString("chart_type")
-                            
+
                     };
                     tableModel.addRow(data);
                 }
@@ -644,7 +644,7 @@ public final class ChartSearch extends javax.swing.JDialog {
     }
 
     private void comboChartType() {
-       try {
+        try {
 
             String sql = "SELECT distinct chart_type FROM akuntansi.chartlist;";
             PreparedStatement pstatement = conn.prepareStatement(sql);
@@ -656,9 +656,7 @@ public final class ChartSearch extends javax.swing.JDialog {
                     String chart_type = rs.getString("chart_type");
                     combotype.addElement(chart_type);
                 }
-                
-                 
-              
+
                 cboType.setModel(combotype);
             } else {
 

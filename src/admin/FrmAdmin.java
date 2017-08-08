@@ -94,15 +94,12 @@ public class FrmAdmin extends javax.swing.JFrame {
         jLabel38 = new javax.swing.JLabel();
         jLabel37 = new javax.swing.JLabel();
         txtDebit_Journal = new javax.swing.JTextField();
-        jLabel47 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
         txtStatus = new javax.swing.JTextField();
         lblError = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel51 = new javax.swing.JLabel();
-        jScrollPane13 = new javax.swing.JScrollPane();
-        lstSuggestions_Journal = new javax.swing.JList<>();
         jPanel22 = new javax.swing.JPanel();
         jScrollPane10 = new javax.swing.JScrollPane();
         tblJournalMaker = new javax.swing.JTable();
@@ -272,6 +269,7 @@ public class FrmAdmin extends javax.swing.JFrame {
         jLabel17 = new javax.swing.JLabel();
         jLabel41 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
+        jLabel42 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         menuRefresh = new javax.swing.JMenuItem();
@@ -308,27 +306,27 @@ public class FrmAdmin extends javax.swing.JFrame {
         jLabel34.setFont(new java.awt.Font("Orator Std", 0, 18)); // NOI18N
         jLabel34.setForeground(new java.awt.Color(255, 255, 255));
         jLabel34.setText("Chart NUMBER");
-        jPanel20.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 140, 20));
+        jPanel20.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 140, 20));
 
         jLabel35.setFont(new java.awt.Font("Orator Std", 0, 18)); // NOI18N
         jLabel35.setForeground(new java.awt.Color(255, 255, 255));
         jLabel35.setText("DATE");
-        jPanel20.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 120, -1, 30));
+        jPanel20.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 160, -1, 30));
 
         txtChartName_Journal.setEditable(false);
-        jPanel20.add(txtChartName_Journal, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 190, 210, 30));
+        jPanel20.add(txtChartName_Journal, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 280, 210, 40));
 
         jLabel39.setFont(new java.awt.Font("Orator Std", 0, 18)); // NOI18N
         jLabel39.setForeground(new java.awt.Color(255, 255, 255));
         jLabel39.setText("Description");
-        jPanel20.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 170, -1, -1));
+        jPanel20.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 210, -1, -1));
 
         jLabel36.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/AMA JOURNAL.png"))); // NOI18N
-        jPanel20.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 560, 70));
+        jPanel20.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 560, 90));
 
         txtChartNumber_Journal.setEditable(false);
         txtChartNumber_Journal.setFont(new java.awt.Font("Orator Std", 0, 18)); // NOI18N
-        jPanel20.add(txtChartNumber_Journal, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 140, 150, 40));
+        jPanel20.add(txtChartNumber_Journal, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 210, 150, 40));
 
         txtDesc_Journal.setColumns(20);
         txtDesc_Journal.setRows(5);
@@ -339,7 +337,7 @@ public class FrmAdmin extends javax.swing.JFrame {
         });
         jScrollPane9.setViewportView(txtDesc_Journal);
 
-        jPanel20.add(jScrollPane9, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 170, 270, 170));
+        jPanel20.add(jScrollPane9, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 210, 270, 110));
 
         btnView_Journal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/View Journal.png"))); // NOI18N
         btnView_Journal.setText("jButton6");
@@ -381,7 +379,7 @@ public class FrmAdmin extends javax.swing.JFrame {
                 btnSearch_JournalActionPerformed(evt);
             }
         });
-        jPanel20.add(btnSearch_Journal, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 140, 50, 40));
+        jPanel20.add(btnSearch_Journal, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 210, 50, 40));
 
         dateChooser.setDateFormatString("yyyy-MM-dd");
         dateChooser.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -389,13 +387,13 @@ public class FrmAdmin extends javax.swing.JFrame {
                 dateChooserKeyReleased(evt);
             }
         });
-        jPanel20.add(dateChooser, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 120, 270, 30));
+        jPanel20.add(dateChooser, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 160, 270, 30));
 
         txtJID_Journal.setEditable(false);
         txtJID_Journal.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         txtJID_Journal.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtJID_Journal.setText("JID");
-        jPanel20.add(txtJID_Journal, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 90, 210, 40));
+        jPanel20.add(txtJID_Journal, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 140, 210, 40));
 
         btnDelete_Journal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/delete-button.gif"))); // NOI18N
         btnDelete_Journal.setContentAreaFilled(false);
@@ -478,11 +476,6 @@ public class FrmAdmin extends javax.swing.JFrame {
 
         jPanel20.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, 770, 50));
 
-        jLabel47.setFont(new java.awt.Font("Orator Std", 0, 18)); // NOI18N
-        jLabel47.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel47.setText("SUGGESTION");
-        jPanel20.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, -1, 30));
-
         jLabel13.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText("Status");
@@ -510,7 +503,7 @@ public class FrmAdmin extends javax.swing.JFrame {
         lblError.setForeground(new java.awt.Color(255, 51, 51));
         lblError.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblError.setText("Error Text appears here.");
-        jPanel20.add(lblError, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 87, 230, 20));
+        jPanel20.add(lblError, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 130, 230, 20));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/arrow_refresh.png"))); // NOI18N
         jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -523,11 +516,7 @@ public class FrmAdmin extends javax.swing.JFrame {
         jLabel51.setFont(new java.awt.Font("Orator Std", 0, 18)); // NOI18N
         jLabel51.setForeground(new java.awt.Color(255, 255, 255));
         jLabel51.setText("Chart Name");
-        jPanel20.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, -1, 30));
-
-        jScrollPane13.setViewportView(lstSuggestions_Journal);
-
-        jPanel20.add(jScrollPane13, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 230, 210, 110));
+        jPanel20.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 280, -1, 30));
 
         jPanel22.setBackground(new java.awt.Color(32, 47, 78));
         jPanel22.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -591,7 +580,7 @@ public class FrmAdmin extends javax.swing.JFrame {
         jPanel22Layout.setVerticalGroup(
             jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel22Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(31, Short.MAX_VALUE)
                 .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -617,7 +606,7 @@ public class FrmAdmin extends javax.swing.JFrame {
                 .addComponent(jPanel20, javax.swing.GroupLayout.PREFERRED_SIZE, 421, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(42, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         tab.addTab("Journal", jPanel7);
@@ -744,7 +733,7 @@ public class FrmAdmin extends javax.swing.JFrame {
                                 .addComponent(cboChart_GL, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(cboPeriod_GL, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 88, Short.MAX_VALUE)
                                 .addComponent(btnSearch_GL, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel32))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -758,24 +747,23 @@ public class FrmAdmin extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane3))
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGap(37, 37, 37)
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addComponent(jLabel9)
-                                .addGap(26, 26, 26)
-                                .addComponent(txtTDebit_GL, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addComponent(jLabel10)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txtTCredit_GL, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(49, 49, 49)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel10)
+                            .addComponent(jLabel9))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtTCredit_GL, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtTDebit_GL, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(61, 61, 61)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtBalance_GL, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(458, 458, 458)
+                        .addGap(451, 451, 451)
                         .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnSave_GL, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnSave_GL, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel6Layout.setVerticalGroup(
@@ -797,24 +785,27 @@ public class FrmAdmin extends javax.swing.JFrame {
                             .addComponent(txtStatus_GL)))
                     .addComponent(btnSearch_GL, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(13, 13, 13)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 518, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 521, Short.MAX_VALUE)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtTDebit_GL, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(19, 19, 19)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(txtBalance_GL, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txtTCredit_GL, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(txtTDebit_GL, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(txtTCredit_GL, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtBalance_GL, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(btnSave_GL, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(btnSave_GL, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(30, 30, 30))
+                        .addGap(48, 48, 48)
+                        .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(26, 26, 26))
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -975,7 +966,7 @@ public class FrmAdmin extends javax.swing.JFrame {
             }
         });
 
-        btnLaunchSearcher.setText("...");
+        btnLaunchSearcher.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/More.gif"))); // NOI18N
         btnLaunchSearcher.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLaunchSearcherActionPerformed(evt);
@@ -1002,7 +993,7 @@ public class FrmAdmin extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(btnAddProduct_INV, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnLaunchSearcher)))
+                        .addComponent(btnLaunchSearcher, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
@@ -1014,14 +1005,13 @@ public class FrmAdmin extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtPID_INV, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel65, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtPName_INV, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel65, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtPName_INV, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnAddProduct_INV, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(btnLaunchSearcher))
+                    .addComponent(btnAddProduct_INV, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnLaunchSearcher, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -1618,7 +1608,7 @@ public class FrmAdmin extends javax.swing.JFrame {
             tblSalesRevenue_PL.getColumnModel().getColumn(1).setResizable(false);
         }
 
-        jLabel2.setFont(new java.awt.Font("Adobe Caslon Pro Bold", 1, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Orator Std", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Total Sales Revenue");
 
@@ -1737,7 +1727,7 @@ public class FrmAdmin extends javax.swing.JFrame {
         jPanel9.setBackground(new java.awt.Color(32, 47, 78));
         jPanel9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 153)));
 
-        jLabel7.setFont(new java.awt.Font("Adobe Caslon Pro Bold", 1, 18)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Orator Std", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Gross Profit (Loss)");
 
@@ -2384,6 +2374,10 @@ public class FrmAdmin extends javax.swing.JFrame {
         getContentPane().add(jLabel15);
         jLabel15.setBounds(30, 0, 1060, 290);
 
+        jLabel42.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/4.png"))); // NOI18N
+        getContentPane().add(jLabel42);
+        jLabel42.setBounds(1300, 800, 180, 220);
+
         jMenu1.setText("Menu");
 
         menuRefresh.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.CTRL_MASK));
@@ -2485,7 +2479,6 @@ public class FrmAdmin extends javax.swing.JFrame {
                 removeTableData();
                 loadJournal_Temporary();
                 executeNew();
-                loadSuggestions();
                 txtChartNumber_Journal.requestFocusInWindow();// pas add new selesai, lgsg fokus ke txtfield chart number
             }
         } catch (NullPointerException ex) {
@@ -3610,9 +3603,9 @@ public class FrmAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel45;
-    private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel48;
     private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
@@ -3680,7 +3673,6 @@ public class FrmAdmin extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane11;
     private javax.swing.JScrollPane jScrollPane12;
-    private javax.swing.JScrollPane jScrollPane13;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
@@ -3698,7 +3690,6 @@ public class FrmAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel lblRefresh_GL;
     private javax.swing.JLabel lblRefresh_PL;
     private javax.swing.JLabel lblRefresh_PL1;
-    private javax.swing.JList<String> lstSuggestions_Journal;
     private javax.swing.JMenuItem menuLogOut;
     private javax.swing.JMenuItem menuRefresh;
     private javax.swing.JSpinner spiQty_INV;
@@ -4934,34 +4925,7 @@ private static Double netprofitloss;
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    private void loadSuggestions() {
-        try {
-
-            String sql = "SELECT chart_suggested FROM akuntansi.suggestions where chart_name=?;";
-            PreparedStatement pstatementAS_BS = conn.prepareStatement(sql);
-            DefaultListModel listSuggest =new DefaultListModel();
-            pstatementAS_BS.setString(1, chart_name);
-            ResultSet rs = pstatementAS_BS.executeQuery();
-            if (rs.isBeforeFirst()) { // check is resultset not empty
-                while (rs.next()) {
-                    
-                    String suggested_chart= rs.getString("chart_suggested");
-                    listSuggest.addElement(suggested_chart);
-              
-                }
-                  
-               lstSuggestions_Journal.setModel(listSuggest);
-            } else {
-
-            }
-            rs.close();
-            pstatementAS_BS.close();
-            generateTotal_PL_BS("Liability");
-        } catch (SQLException ex) {
-            Logger.getLogger(FrmAdmin.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        
-    }
+    
+    
 
 }

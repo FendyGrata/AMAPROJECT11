@@ -167,14 +167,14 @@ public class FrmRegistration extends javax.swing.JFrame {
         btnRegister1.setBackground(new java.awt.Color(255, 255, 255));
         btnRegister1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnRegister1.setForeground(new java.awt.Color(255, 255, 255));
-        btnRegister1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/AMA - CREATE ACCOUNT.png"))); // NOI18N
+        btnRegister1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/sign up now.gif"))); // NOI18N
         btnRegister1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRegister1ActionPerformed(evt);
             }
         });
         getContentPane().add(btnRegister1);
-        btnRegister1.setBounds(160, 620, 220, 70);
+        btnRegister1.setBounds(160, 630, 300, 60);
 
         btnBack.setBackground(new java.awt.Color(255, 255, 255));
         btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/Back.jpg"))); // NOI18N

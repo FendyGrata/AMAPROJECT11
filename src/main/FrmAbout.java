@@ -127,7 +127,7 @@ public class FrmAbout extends javax.swing.JFrame {
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/ezgif.com-resize (1).gif"))); // NOI18N
         getContentPane().add(jLabel10);
-        jLabel10.setBounds(0, 0, 1060, 320);
+        jLabel10.setBounds(0, 0, 1060, 330);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Picture/background.png"))); // NOI18N
         getContentPane().add(jLabel2);
